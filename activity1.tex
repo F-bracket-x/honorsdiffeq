@@ -1,5 +1,10 @@
 \documentclass{ximera}
 
+\ifdefined\HCode
+  \newcommand{\alttext}[1]{\HCode{<span class="sr-only">#1</span>}}
+\else
+  \newcommand{\alttext}[1]{} % Fallback for PDF view
+\fi
 
 % MATH -----------------------------------------------------------
 \newcommand{\nats}{\mathbb N}
@@ -26,8 +31,11 @@
 
 \item Determine which first order differential equation has the following slope field.
 
+
+
 \begin{figure}[h]
     \centering
+\alttext{A direction field.}
 \begin{tikzpicture}[scale=0.9,
     declare function = {f(\x) = \x*\x*\y;} % Define which function we're using
     ]
@@ -61,7 +69,7 @@
         ] (x,y,0);
     \end{axis}
 \end{tikzpicture}
-    \caption{A direction field (aka a slope field)}
+    \caption{A direction field (also known as a slope field)}
 \end{figure}
 
  \begin{enumerate}[label=(\alph*)]
@@ -141,7 +149,7 @@
 
 \begin{figure}[h]
 \centering
-   \includegraphics[scale=0.7]{IntegralCurveFromThreeSolutionCurves.png}
+   \includegraphics[scale=0.7,alt={An integral curve in a direction field.}]{IntegralCurveFromThreeSolutionCurves.png}
    \caption{An integral curve in a direction field}
 \end{figure}
 
@@ -166,13 +174,14 @@
     \item $(-1,2)$
     \end{enumerate}
 
+% a,d,e,g ... h
 
 \item Suppose an epidemic spreading through a certain population is modeled by the differential equation $y^{\,\prime}(t)=ay(t)-b[y(t)]^2$ where $a,b$ are positive constants and $y(t)$ is the number of individuals who have the disease at time $t$ days.  Below is a direction field for such a model.  Suppose we are given that $a=0.75$ and $\displaystyle \lim_{t\rightarrow\infty} y(t)=6,000$ for any non-trivial solution $y(t)$.  Determine $b$. Round to the nearest ten-thousandth.
 
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale= 0.7]{UnkLogisticAct1.pdf}
+\includegraphics[scale= 0.7,alt={A direction field.}]{UnkLogisticAct1.pdf}
 \caption{Another direction field}
 \end{figure}
 

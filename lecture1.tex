@@ -1,6 +1,13 @@
 \documentclass{ximera}
 
 
+\ifdefined\HCode
+  \newcommand{\alttext}[1]{\HCode{<span class="sr-only">#1</span>}}
+\else
+  \newcommand{\alttext}[1]{} % Fallback for PDF view
+\fi
+
+
 
 % MATH -----------------------------------------------------------
 \newcommand{\nats}{\mathbb N}
@@ -23,6 +30,7 @@
 
 \begin{figure}[h]
     \centering
+\alttext{A direction field.}
 \begin{tikzpicture}[scale=1.4,
     declare function = {f(\x) = \x*\x/\y;} % Define which function we're using
     ]

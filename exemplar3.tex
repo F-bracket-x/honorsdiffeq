@@ -1,0 +1,165 @@
+\documentclass{ximera}
+
+% MATH -----------------------------------------------------------
+\newcommand{\nats}{\mathbb N}
+\newcommand{\ints}{\mathbb Z}
+\newcommand{\rats}{\mathbb Q}
+\newcommand{\reals}{\mathbb R}
+\newcommand{\complex}{\mathbb C}
+\newcommand{\powerset}{\mathscr P}
+
+%-------------------------------------------------------------
+
+\pgfplotsset{compat=1.18}
+\begin{document}
+\begin{abstract}
+ \end{abstract}
+
+    \title{Exemplar Examples 3}
+    
+    \maketitle
+
+Let's consider the first order Bernoulli differential equation $xy^{\,\prime}=y-2xy^2$.
+
+\begin{enumerate}
+
+\item Does this equation have any constant solutions? 
+
+% YES!  y=0
+
+\vfill
+
+\item Let's look for non-constant solutions.  Let's write this equation the standard form $y^{\,\prime}+p(x)y=q(x)y^r$ and determine a non-trivial solution $y_1$ to the complementary equation $y^{\,\prime}+p(x)y=0$.
+
+\vfill
+\vfill
+
+% y^{\,\prime}-1/x y=-2y^2.  y_1=x is a complementary solution.
+
+\item Let's use the substitution $u=\dfrac{y}{y_1}$ to determine a separable differential equation $u$ must satisfy.
+
+
+% y=xu ---> y^{\,\prime}=xu'+u.  y^{\,\prime}-1/x y=xu'.  So xu'=-2(xu)^2 ---> xu'=-2x^2 u^2 ---> u^(-2) u'=-2x
+
+\vfill
+\vfill
+\vfill
+
+\item Let's solve that equation, and then determine a general solution for $y$.
+
+% ---> -1/u = -x^2+C --> u=1/(x^2+C) ---> y=x/(x^2+C) OR y=0
+
+% SANITY CHECK: y=x(x^2+1)^(-1) ---> y^{\,\prime}=y/x-y/(x^2+1)(2x) ----> xy^{\,\prime}=y-2x y^2.  Checks out!
+
+\vfill
+\vfill
+
+
+\newpage
+
+\item What is the solution to the IVP $xy^{\,\prime}=y-2xy^2$, $y(1)=0.5$?
+
+% y=x/(x^2+1)
+
+\vfill
+
+
+\item What is the solution to the IVP $xy^{\,\prime}=y-2xy^2$, $y(1)=0$?
+
+\vfill
+
+% y=0
+
+\newpage
+
+Let's consider the first order differential equation $xy^{\,\prime}=x+y-\dfrac{y^2}{x}$ for $x>0$.
+
+\begin{enumerate}
+
+\item Does this equation have any constant solutions?   
+
+\vfill
+
+\item This equation is not linear, not separable, and not Bernoulli.  But it is nonlinear homogeneous.  Let's determine a differential equation $u=\dfrac{y}{x}$ must satisfy.
+
+\vfill
+\vfill
+
+% y^{\,\prime}=xu'+u=1+u-u^2 ---> xu'=1-u^2 ----> 1/(1-u^2) u'=1/x
+
+
+
+\item Let's solve this equation and then determine a general solution for $y$.
+
+% ln|(1+u)/(1-u)|=ln(x^2)+c ---EXP---> (1+u)/(1-u)=cx^2
+
+% -1+2/(1-u)=cx^2 ---> 2/(1-u)=1+cx^2 ---> u=1 - 2/(1+cx^2).  y=x - 2x/(1+cx^2)
+
+
+\vfill
+\vfill
+\vfill
+
+\item  Let's determine the solution to the IVP $xy^{\,\prime}=x+y-\dfrac{y^2}{x}$, $y(1)=0$.
+
+% 0=1-2/(1+c).  c=1.  So y=x - 2x/(1+x^2)
+
+\vspace{1cm}
+
+
+\end{enumerate}
+
+
+
+\newpage
+
+
+Now let's consider the first order differential equation $y^{\,\prime}=(x+y)^2$.
+
+
+\begin{enumerate}
+
+\item Does this equation have any constant solutions? 
+
+\vfill
+
+% No!
+
+\item This equation is not linear, not separable, not Bernoulli, and not non-linear homogeneous.  However, let's determine a nice substitution to try in order to transform this differential equation into something nicer.
+
+\vfill
+\vfill
+
+% u=x+y so y=u-x and y^{\,\prime}=u'-1=u^2.  So u'=1+u^2 and thus 1/(1+u^2) u'=1.
+
+\item Let's solve that equation, and then determine a general solution for $y$.
+
+% arctan(u)=x+C so u=tan(x+C).  Hence y=tan(x+C)-x is the general solution.
+
+\vfill
+\vfill
+
+
+\item What is the solution to the IVP $y^{\,\prime}=(x+y)^2$, $y(0)=0$?
+
+% y=tan(x)-x
+
+\vfill
+\vfill
+
+\item Let's determine the interval $I$ of maximum width on which this solution is valid.
+
+\vspace{1cm}
+
+% (-pi/2,pi/2)
+
+
+\end{enumerate}
+
+
+
+
+\end{enumerate}
+
+
+\end{document}

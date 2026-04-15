@@ -1,0 +1,176 @@
+\documentclass{ximera}
+
+\ifdefined\HCode
+  \newcommand{\alttext}[1]{\HCode{<span class="sr-only">#1</span>}}
+\else
+  \newcommand{\alttext}[1]{} % Fallback for PDF view
+\fi
+
+
+% MATH -----------------------------------------------------------
+\newcommand{\nats}{\mathbb N}
+\newcommand{\ints}{\mathbb Z}
+\newcommand{\rats}{\mathbb Q}
+\newcommand{\reals}{\mathbb R}
+\newcommand{\complex}{\mathbb C}
+\newcommand{\powerset}{\mathscr P}
+
+%-------------------------------------------------------------
+
+\pgfplotsset{compat=1.18}
+\begin{document}
+\begin{abstract}
+ \end{abstract}
+
+    \title{Class Discussion Activity 4}
+    
+    \maketitle
+
+\section*{Exercises}
+
+\begin{enumerate}[label=(\arabic*)]
+
+\item Suppose $y(x)$ satisfies the IVP $y^3\,\mathrm{d}x+(3xy^2+1)\,\mathrm{d}y=0$, $y(1)=1$.  Find $y(0)$ to the nearest hundredth.
+
+% 2
+
+% xy^3+y=2
+
+
+\item Identify the equations that are in an exact form, explicitly as written.  Select all that apply.
+
+
+\begin{enumerate}[label=(\alph*)]
+
+\item $(1+y+3x^2)\,\mathrm{d}x+(x+2y)\,\mathrm{d}y=0$.  % ***
+
+
+\item $\left(ye^x+y^2\right)\,\mathrm{d}x+(e^x-2y)\,\mathrm{d}y=0$.
+
+
+\item $\dfrac{y^2-x^2}{(x^2+y^2)^2}\,\mathrm{d}x+\dfrac{2y}{(x^2+y^2)^2}\,\mathrm{d}y=0$.
+
+
+\item $(3x^2y-4x^3)\,\mathrm{d}x+(x^3+\ln{(y)})\,\mathrm{d}y=0$.  % ***
+
+\item $ye^{xy}\,\mathrm{d}x+\left(x\ln{(y)}+xe^{xy}\right)\,\mathrm{d}y=0$.
+
+\item $\dfrac{y}{(x+y)^2}\,\mathrm{d}x-\dfrac{x}{(x+y)^2}\,\mathrm{d}y=0$.  % ***
+
+
+\end{enumerate}
+
+% (a),(d),(f) with options through (f)
+
+
+\item Suppose $y(x)$ satisfies the IVP $\displaystyle \frac{y}{x}\,\mathrm{d}x +\left(\ln{(x)}-\frac{1}{y-1}-2y\right)\, dy=0$, $y(1)=2$.  Find the solution to $y(x)=3$, to the nearest hundredth.
+
+% 6.67
+
+% x^y-y=e^{y\ln{(x)}}-y=0
+
+
+\item Find the integrating factor $\mu (x)$ for $(4xy+2y+5)\,\mathrm{d}x+ 2x^2\,\mathrm{d}y=0$ satisfying $\mu(-1)=1$.  Find $\mu(2)$ to the nearest hundredth.
+
+Hint:  if $M\,\mathrm{d}x+N\,\mathrm{d}y=0$ is not exact, but $p=(M_{y}-N_{x})/N$ is independent of $y$ then $\displaystyle \mu (x)= e^{P(x)}$, where $P'(x)=p(x)$, is an integrating factor of $M\,\mathrm{d}x+N\,\mathrm{d}y=0$.
+
+% M=4xy+2y+5 and N=2x^2.  p=(M_y-N_x)/N=(4x+2-4x)/(2x^2)=1/x^2 so e^(-1/x-1).  So e^{-1/2-1}=1/sqrt(e^3)\approx 0.22
+
+%  Check:  $(4xy+2y+5)e^(-1/x)\,\mathrm{d}x+ 2x^2e^(-1/x)\,\mathrm{d}y=0$.
+
+%  M=(4xy+2y+5)e^(-1/x-1) and N=2x^2e^(-1/x-1).  M_y=(4x+2)e^(-1/x-1) and N_x=(4x+2)e^(-1/x-1).  Checks out!
+
+\newpage
+
+\item Let $M,N,M_{y},N_{x}$ be continuous functions on an open rectangle $R$ in the $xy$-plane.  If $q=(N_{x}-M_{y})/M$ is independent of $x$, one can show that $\displaystyle \mu (y)=\pm e^{\int q(y)\,\mathrm{d}y}$ is an integrating factor of $M\,\mathrm{d}x+N\,\mathrm{d}y=0$ on $R$.  Use this to find $x$ such that $y(x)=\dfrac{\pi}{4}$ given that $y(x)$ satisfies\\ $e^x \,\mathrm{d}x+\left(\dfrac{e^x}{\tan{(y)}}+\dfrac{2y}{\sin{(y)}}\right)\,\mathrm{d}y=0$, $y(0)=\dfrac{\pi}{6}$.  Round to the nearest tenth.
+
+
+    % e^x sin(y)+y^2=1/2+pi^2/36.  e^x /sqrt(2)+pi^2/16=1/2+pi^2/36 ... e^x=sqrt(2)*[1/2-5*pi^2/144]
+
+    % x=ln(sqrt(2)*[1/2-5*pi^2/144])\approx -1.5
+
+\item Suppose $y(t)$ is a nonconstant function satisfying the first order autonomous differential equation $\displaystyle y^{\,\prime}=9y^2-y^4$ and that $\displaystyle \lim_{t\rightarrow \infty}y(t)=0$.  Which of the following are possible initial conditions for $y(t)$.  Select all that apply.
+
+
+    % y'=y^2(3-y)(3+y).   Phase line:  <--- (-3) ---> 0 ---> 3 <----
+
+\begin{enumerate}[label=(\alph*)]
+\item $y(0)=-4$
+
+\item $y(0)=-3$
+
+\item $y(0)=-2$  % ***
+
+\item $y(0)=-1$  % ***
+
+\item $y(0)=0$
+
+\item $y(0)=1$
+
+\item $y(0)=2$
+
+\item $y(0)=4$
+
+\end{enumerate}
+
+% (c),(d) with options through (h)
+
+\item Suppose the rate of population growth rate in a study population of ants is modeled by the first order autonomous differential equation $\displaystyle y\,'=y-0.00126y^2$ at $t\geq 0$ days (after the study began).  What number of ants does the study population approach in the long run?  Round to the nearest hundred ants (e.g. 1200 ants).\\
+
+    % 1/0.00126\approx 800
+
+
+\item Evaluate $\displaystyle \lim_{t\rightarrow\infty}y(t)$ where $y(t)$ is the solution to $\displaystyle \frac{dy}{dt}=4y-ye^{2y}$ with initial condition $y(0)=0.5$. Round to the nearest hundredth.\\
+
+%   y(2-e^y)(2+e^y) -> y=0 or y=ln(2).  y' in (0,ln(2)) is positive.  So ln(2)\approx 0.69
+
+
+\item How many stable equilibria does the first order autonomous differential equation $y\,^{\prime}=(y-y^3)(e^{y}-2)(1+\ln{(y)})$ have? 
+
+% 2
+
+% 0 --> 1/e <--- ln(2) ---> 1 <---
+
+
+
+\newpage
+
+\item Suppose that below is part of the phase plane for an autonomous differential equation $y\,^{\prime}=f(y)$.  Suppose $y(t)$ satisfies $y\,^{\prime}=f(y)$, $y(0)=0$.  Determine $\displaystyle \lim_{t\rightarrow \infty} y(t)$. If the answer is $-\infty$, enter $-1000$ and if the answer is $\infty$ enter $1000$.
+
+
+% -1
+
+\begin{figure}[h]
+    \centering
+    \alttext{A phase plane for y prime versus y.}
+    \begin{tikzpicture}[scale=1.5]
+\begin{axis}[scale only axis=true,width=0.4\textwidth,
+        height=0.3\textwidth,grid=both,unit vector ratio=1 1,
+    minor tick num=1,
+    axis lines = middle,
+    ymin=-6, ymax=6,
+        xmin=-4, xmax=4,
+        xtick={-4,-2,...,4},
+ytick={-6,-4,...,6},
+    xlabel = $y$,
+    ylabel = {$y\,^{\prime}$},
+]
+\addplot [
+    domain=-4:4,
+    samples=100,
+    color=black,thick
+]
+{0.04*(2-x)*(x+3)^2*(x-3)*(x+1)^2};
+\end{axis}
+\end{tikzpicture}
+\caption{A phase plane with y' as a function of y}
+\end{figure}
+
+
+
+
+
+ 
+\end{enumerate}
+
+\end{document}

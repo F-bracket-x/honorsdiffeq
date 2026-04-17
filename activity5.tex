@@ -1,0 +1,157 @@
+\documentclass{ximera}
+
+
+% MATH -----------------------------------------------------------
+\newcommand{\nats}{\mathbb N}
+\newcommand{\ints}{\mathbb Z}
+\newcommand{\rats}{\mathbb Q}
+\newcommand{\reals}{\mathbb R}
+\newcommand{\complex}{\mathbb C}
+\newcommand{\powerset}{\mathscr P}
+
+%-------------------------------------------------------------
+
+\pgfplotsset{compat=1.18}
+\begin{document}
+\begin{abstract}
+ \end{abstract}
+
+    \title{Class Discussion Activity 5}
+    
+    \maketitle
+
+\section*{Exercises}
+
+
+A small pool has $10,000$ liters of fresh water in it. Then a solution containing $10$ milligrams per liter of dissolved sodium hypochlorite is pumped into the pool at $500$ liters per minute.  Assume the pool is kept thoroughly mixed and is allowed to drain out the bottom at $500$ liters per minute.  Let $y(t)$ be the amount of dissolved sodium hypochlorite in grams in the tank at $t\geq 0$ minutes into this process.
+
+% y' = 5 g/min - 5y/10^2 = 5 - y/20
+
+
+\begin{enumerate}[label=(\arabic*)]
+
+\item  Which IVP below does $y(t)$ satisfy?
+
+\begin{enumerate}[label=(\alph*)]
+\item $y\,^{\prime}=5-\dfrac{y}{20}$, $y(0)=0$ % ***
+\item $y\,^{\prime}=5-\dfrac{y}{20}$, $y(0)=10$ 
+\item $y'=5000-\dfrac{y}{20}$, $y(0)=0$
+\item $y'=5000-\dfrac{y}{20}$, $y(0)=10$
+\item $\displaystyle y'=5-\frac{500y}{1000+10t}$, $y(0)=0$
+\item None of these
+\end{enumerate}
+
+% (a) with options through (f)
+
+\item Find $\displaystyle \lim_{t\rightarrow \infty} y(t)$.  
+
+
+% 100
+
+
+\newpage
+
+\item Suppose a traditional individual retirement account (IRA) will at worst earn at least the equivalent of $4$ percent continuously compounded, but requires that the owner must withdraw a minimum $60$ thousand dollars each year. Assume the withdrawals are frequent and evenly spaced so that it is reasonably approximated as being done continuously.  Given that the owner starts with a minimum withdrawal, but each year increases the withdrawal amount by another $2$ thousand dollars, find the minimum amount of funds needed in the IRA to guarantee never running out under the worst case assumptions.  Determine the answer in thousands of dollars. Round to the nearest whole number.
+
+   Hint:  let $y(t)$ be the amount of money in the IRA (in thousands of dollars) at $t$ years.
+
+
+    % 2750
+
+    % y'=0.04y-(60+2t), y(0)=N.  Linear not separable, so y'-0.04 y=-(2t+60) so (e^(-0.04t) y)'=-(2t+60)e^(-0.04t)
+
+    % e^(-0.04t) y=- [ int u=(2t+60) dv=e^(-0.04t)dt]
+
+    % e^(-0.04t) y=- [ -25(2t+60)e^(-0.04t) + 50 int e^(-0.04t)dt]
+
+    % e^(-0.04t) y= 25(2t+60)e^(-0.04t) + 1250 e^(-0.04t)+C
+
+    % e^(-0.04t) y= (50t+2750)e^(-0.04t) +C    ...  SANITY CHECK: 50e^(-0.04t)-(2t+110)e^(-0.04t) ... YUP!
+
+    % y= (50t+2750) + Ce^(0.04t)
+
+    % Just need C\geq 0.  So y(0)\geq 2750.
+
+
+\item A $7$-kg bowling ball is set to fall through a dense fluid, starting at rest, and the fluid exerts a resistive force on the bowling ball proportional to the square root of the speed of the bowling ball.  Given that the resistance is $122.5$ Newtons at a speed of $0.25$ meters per second, determine the terminal speed (in meters per second) of the bowling ball in this dense fluid.  Use $g=9.8$ m/s$^2$ for the magnitude of the acceleration due to gravity and round to the nearest hundredth.\\
+
+      % 0.08
+
+      % F_r=+245*sqrt(-v).  So at v=-1/4, we have F_r=122.5.
+
+      % mv'=-mg+245\sqrt{-v}
+
+      % mv'=-mg+245\sqrt{-v}  --->  7/25=\sqrt{-v} ---> v=-49/625\approx -0.08
+
+\item  A space vehicle is launched from the moon (radius of $1080$ miles) and runs out of launch fuel at a height of 80 miles. The acceleration due to gravity at the surface of the moon is about $5.31$ ft/s$^2$. Find the escape velocity in miles/s to the nearest tenth. 
+
+
+% sqrt(2(5.31/5280)(1080)^2/[1080+80])\approx 1.4
+
+\item A $1$ kg stone is sling-shot straight up into the air at $40$ meter per second \emph{from an initial height of $1$ meter}.  Assuming the air resists the stone's motion at a rate of $1/25$ N of force per m/s of speed, determine the height in meters reached by the object, to the nearest tenth of a meter.  Use $g=9.8$ m/s$^2$ for the magnitude of the acceleration due to gravity.\\
+
+% 9.8/(1/25)=245
+
+% v(t)=-245+(40+245)e^{-t/25}.  Set to zero.  b=-25ln(245/285)\approx 3.78
+
+% integral of v(t) from 0 to b is approx. 73.7.  ADD 1 METER!!
+
+% 74.7 is the final answer
+
+
+\item  A $10$ kg object falls attached to vertical rails with a friction-breaking device that is designed to exert a resistive force \emph{proportional to the fourth power of the speed} of the object.  The resistance is $96$ N if the speed is $2$ meter per second.  Find the terminal velocity in meters per second to the nearest hundredth of a meter per second.  Use $g=9.8$ m/s$^2$ for the magnitude of the acceleration due to gravity.\\
+
+    % -2.01
+
+    % F_d=kv^4 where 96=k2^4 so k=6.
+
+    % 10v'=-98+6v^4=0 so -(98/6)^(1/4)\approx  -2.01 m/s
+
+\newpage
+
+\item A second order differential equation is called ``second order autonomous" if it can be expressed as $y\,^{\prime\prime}=f(y,y\,^{\prime})$, meaning it does not involve the independent input variable $t$.  One special case is $y\,^{\prime\prime}=g(y)$.  One can always turn such an equation into a first order equation by using the substitution $v=y\,^{\prime}$ as $\displaystyle \dfrac{\mathrm{d}v}{\mathrm{d}t}=\dfrac{\mathrm{d}v}{\mathrm{d}y}\dfrac{\mathrm{d}y}{\mathrm{d}t}=v\dfrac{\mathrm{d}v}{\mathrm{d}y}$.  Suppose $y(t)$ satisfies $y\,^{\prime\prime}+1/y^2=0$, $y(0)=1$, $y,^{\prime}(0)=-\sqrt{2}$. Find $y(1)$ to the nearest hundredth. 
+
+    % 1.08
+
+    %  y''= v dv/dy = g(y).
+
+    %  v dv/dy =-1/ y^2 so integrate both sides 0.5v^2 =1/y +c. c=0 since v=-sqrt(2) when y=1. so y'=v= +/- sqrt(2/y) (but here choose -)
+
+    %  So (2/y)^{-1/2} dy=- dt implies Integral of sqrt(y) /sqrt(2) dy=-t+C
+
+    % So  sqrt(2)/3  y^{3/2}=-t+C
+
+  % So   y^{3/2}= -3/sqrt(2) t+C
+
+  % C=1
+
+  % So y=(1-3/sqrt(2)t)^(2/3).  At t=1, y(1)\approx 1.08
+
+
+
+\item Determine $y(1)$ given that $y(t)$ satisfies 2nd order autonomous equation $y\,^{\prime\prime}=\dfrac{2(y\,^{\prime})^{2}}{y}$ and passes through $(0,1)$ with slope $-2$.  Round to the nearest tenth. \\
+
+Hint: $y\,^{\prime}$ is not trivial, so there is an open interval on which $y\,^{\prime}$ is never $0$ and hence, on that interval we may divide both sides of the equation by $y\,^{\prime}$ and then integrate both sides with respect to $t$ using that $y\,^{\prime}dt=dy$ and $y\,^{\prime\prime}dt=d(y\,^{\prime})$.\\
+
+
+% 0.3
+
+% y''/y' = 2y' /y --> ln(y')=ln(y^2)+C->y'=Cy^2. So y'/y^2 =C -> -1/y=Ct+D-> y=1/(Ct+D) or y=E.
+
+ % y=1/(2t+1) ... y'= - 2/(2t+1)^2
+
+\item When a course ends, students start to forget the material they have learned.  One model (called the Ebbinghaus model) assumes that the rate at which a student forgets material is proportional to the difference between the proportion of material currently remembered and some positive constant, $a$.  That is, $y'=-k(y-a)$, where $0\leq y(t)\leq 1$ is the proportion of the course material remembered $t$ weeks after the end of the course and $a,k$ are positive constants.
+
+    Suppose that one week after a course ends, a student remembers $90$\% of the material learned, but in the long run the amount the student remembers approaches $20$\% of the material learned.  What percent of course material is remembered by this student $5$ weeks after the course ends, according to this model?  Round the answer to the nearest whole percent.  (Assume that the student remembers all the material learned at the moment when the course ends.)
+
+    % 61
+
+% y'=-k(y-0.2) with y(0)=1 and y(1)=0.9.  So y=0.2+Ce^(-kt) is the "easy" part.  C=0.8 for y(0)=1.  y=0.2+0.8e^(-kt).
+
+% y(1)=0.9 so 0.9=0.2+0.8[e^(-k)]^t or equivalently 7/8=[e^(-k)].  Thus y(t)=0.2+0.8[7/8]^t.  y(5)\approx 0.61
+
+
+ 
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,131 @@
+\documentclass{ximera}
+
+
+% MATH -----------------------------------------------------------
+\newcommand{\nats}{\mathbb N}
+\newcommand{\ints}{\mathbb Z}
+\newcommand{\rats}{\mathbb Q}
+\newcommand{\reals}{\mathbb R}
+\newcommand{\complex}{\mathbb C}
+\newcommand{\powerset}{\mathscr P}
+
+%-------------------------------------------------------------
+
+\pgfplotsset{compat=1.18}
+\begin{document}
+\begin{abstract}
+ \end{abstract}
+
+    \title{Class Discussion Activity 6}
+    
+    \maketitle
+
+\section*{Exercises}
+
+
+
+\begin{enumerate}[label=(\arabic*)]
+
+\item Let $p(x),q(x)$ be continuous functions on $(0,\infty)$.  Suppose $y_1$ and $y_2$ form a fundamental set of solutions satisfying $\displaystyle y\,^{\prime\prime}+p(x)y\,^{\prime}+q(x)y=0$ on $(0,\infty)$.  Which of the following CANNOT be the Wronskian $W(x)$ of $y_1$ and $y_2$?  Select all that apply.
+
+
+\begin{enumerate}[label=(\alph*)]
+\item  $W(x)=x$
+\item  $W(x)=x-1$ % ***
+\item  $W(x)=x+1$
+\item  $W(x)=\dfrac{1}{x}$ 
+\item  $W(x)=4x^2-1$ % ***
+\item  $W(x)=1$
+\item  $W(x)=e^x-1$
+\item  $W(x)=e^x-2$ % ***
+\end{enumerate}
+
+% (b), (e), and (h) with options through (h)
+
+\item Suppose $y_1$ and $y_2$ are two solutions to $\displaystyle y\,^{\prime\prime}+\frac{1}{x-1} y\,^{\prime}-\frac{1}{x+1}y=0$ on the interval $(-1,1)$ and their Wronskian $W(x)$ satisfies $W(0)=1$.  Determine $W(1/2)$.
+
+% 2
+
+% W=Ce^[-Int 1/(x-1) dx]=C/(x-1).  C=-1.  So W=1/(1-x). W(1/2)=2.
+
+
+\item  Let $W(x)$ be the Wronskian of $y_1=\sin (2x)$ and $y_2=\sin (x)\cos (x)$.  Determine $W(1/2)$
+
+% 0
+
+\item Suppose $y_{1}$ and $y_{2}$ are linearly independent solutions to the second order linear homogeneous differential equation $(x^3+1) y\,^{\prime\prime}+3x^2y\,^{\prime}+2xy=0$ on $(0,\infty)$ and their Wronskian $W(x)$ satisfies $W(1)=1$.  Determine $W(1/2)$.  Round to the nearest tenth.
+
+% p=3x^2/(x^3+1) ... W=Ce^(-ln(x^3+1))=C/(x^3+1) ... C=2 so 2/(x^3+1).  So 2/(1/8+1) = 16/9 \approx 1.8
+
+\newpage
+
+
+\item  Which are NOT solutions to the second order linear homogeneous constant-coefficient differential equation $y^{\,\prime\prime}-y^{\,\prime}-12y=0$?  Select all that apply.
+
+%  r^2-r-12=(r-4)(r+3)
+
+
+\begin{enumerate}[label=(\alph*)]
+\item $y_1=e^{-(1-4t)}$
+\item $y_2=\dfrac{2}{e^{3t}}$
+\item $y_3=e^{1+3t}-e^{1-4t}$  %***
+\item $y_4=e^{1-3t}-e^{1+4t}$
+\item $y_5=0$
+\item $y_6=e^{1-3t}+e^{-(1-4t)}+1$  % ***
+\end{enumerate}
+
+% (c) and (f) with options through (f)
+
+
+\item Suppose $a,b$ are positive constants.  Suppose that non-trivial solutions $y(t)$ to $ay^{\,\prime\prime}+by=0$ are periodic with frequency $f=5$ hertz.  Determine $\displaystyle \frac{a}{b}$.  Round to the nearest thousandth.
+
+%  f = sqrt(b/a)/(2pi)
+%  10pi = sqrt(b/a)
+%  100pi^2 = b/a
+%  a/b = 1/(100pi^2) \approx 0.001
+
+
+
+\item Suppose $y(t)$ satisfies $y^{\,\prime\prime}+4y^{\,\prime}+13y=0$, $y(0)=1$ and $y^{\,\prime}(0)=-2$.  Find $y(\pi)$ to the nearest thousandth.
+
+
+%  r^2+4r+13=0.  y(t)=e^(-2t)cos(3t) so y'(t)=-2y(t)-3e^(-2t)sin(3t).  Then y(\pi)=-e^(-2\pi)\approx -0.002
+
+\item Suppose $y(t)$ satisfies $y^{\,\prime\prime}+5y^{\,\prime}=0$, $y(0)=0$, $y^{\,\prime}(0)=-15$.  Find $\displaystyle \lim_{t\rightarrow \infty} y(t)$.
+
+% -3
+
+% r^2+5r=r(r+5) so y=c_1+ c_2e^{-5t}.  0=c_1+c_2.  y'=-5c_2 e^(-5t).  -15=-5c_2 so c_2=3 means c_1=-3.  So the limit is -3.
+
+% y=-3(1-e^{-5t}).
+
+
+\item For a third order linear homogeneous differential equation, we need three linearly independent solutions to form a fundamental set of solutions. In order to check the linear independence of a given set of solutions, we compute the Wronskian:  the \textbf{Wronskian} of $\{f,g,h\}$ is\\ $\displaystyle
+W(x)=\left|\begin{array}{ccc} f & g & h\\ f' & g'  & h'\\ f'' & g'' & h''\end{array}\right| = f\left|\begin{array}{cc} g' & h'\\ g'' & h'' \end{array}\right|-g\left|\begin{array}{cc} f' & h'\\ f'' & h'' \end{array}\right| + h\left|\begin{array}{cc} f' & g'\\ f'' & g'' \end{array}\right|$.\\ Suppose the functions $y_1,y_2,y_3$ are solutions to $y\,^{\prime\prime\prime}+py\,^{\prime\prime}+qy\,^{\prime}+ry=0$ on an open interval $I$ on which $p,q,r$ are continuous functions.  $\{y_1,y_2,y_3\}$ is a fundamental set of solutions (meaning the general solution is\\ $c_1 y_1+c_2 y_2+c_3 y_3$) if and only if their Wronskian is not $0$.  Find all solutions of the form $e^{rt}$ and $te^{rt}$ for $y\,^{\prime\prime\prime}+y\,^{\prime\prime}-y\,^{\prime}-y=0$, and compute their Wronskian, justifying that they form a fundamental set of solutions to this third-order linear homogeneous differential equation.  Determine $|W(2)|$.  Round to the nearest hundredth.
+
+% W = +/- 4e^(-t)
+
+% |W(2)| = 4/e^2 \approx 0.54
+
+
+
+\item Suppose $y(t)$ satisfies $y\,^{\prime\prime\prime}+y\,^{\prime\prime}-y\,^{\prime}-y=0$, $y(0)=0$, $y'(0)=0$, $y^{\,\prime\prime}(0)=4$.  Determine $y(3)$.  Round to the nearest hundredth.  
+
+
+    % e^3-7/e^3\approx 19.74
+
+% r^3+r^2-r-1=(r^2-1)(r+1).  y=c_1 e^t +(c_2+c_3 t) e^{-t}.
+
+% WANT:  y=e^t-(2t+1)e^(-t)
+
+% y'=e^t+(2t-1)e^(-t)
+
+% y^{\,\prime\prime}=e^t+2e^(-t)-(2t-1)e^(-t)= e^t+(3-2t)e^(-t)
+
+
+
+
+
+\end{enumerate}
+
+\end{document}

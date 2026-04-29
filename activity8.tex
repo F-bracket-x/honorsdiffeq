@@ -1,0 +1,192 @@
+\documentclass{ximera}
+
+
+% MATH -----------------------------------------------------------
+\newcommand{\nats}{\mathbb N}
+\newcommand{\ints}{\mathbb Z}
+\newcommand{\rats}{\mathbb Q}
+\newcommand{\reals}{\mathbb R}
+\newcommand{\complex}{\mathbb C}
+\newcommand{\powerset}{\mathscr P}
+
+%-------------------------------------------------------------
+
+\pgfplotsset{compat=1.18}
+\begin{document}
+\begin{abstract}
+ \end{abstract}
+
+    \title{Class Discussion Activity 8}
+    
+    \maketitle
+
+\section*{Exercises}
+
+
+
+\begin{enumerate}[label=(\arabic*)]
+
+\item Determine the ``best guess" for a particular solution to the 2nd order linear nonhomogeneous constant-coefficient differential equation \\$y\,^{\prime\prime}-4y=8e^{-2t}$.  The ``best guess" is one where there is a solution of that form, but no solution with fewer terms.
+    
+
+
+\begin{enumerate}[label=(\alph*)]
+\item $y_p=Ae^{-2t}$
+\item $y_p=Ate^{-2t}$ % ***
+\item $y_p=At^2 e^{-2t}$
+\item $y_p=(At+B)e^{-2t}$
+\item $y_p=(At^2+Bt)e^{-2t}$  
+\item $y_p=(At^3+Bt^2)e^{-2t}$  
+\item $y_p=(At^3+Bt^2+Ct)e^{-2t}$  
+\item $y_p=(At^3+Bt^2+Ct+D)e^{-2t}$  
+\end{enumerate}
+
+% (b) with options through (h)
+
+\item Determine the ``best guess" for a particular solution to the 2nd order linear nonhomogeneous constant-coefficient differential equation \\$y\,^{\prime\prime}+4y\,^{\prime}+4y=(12t+1)e^{-2t}$.  The ``best guess" is one where there is a solution of that form, but no solution with fewer terms.
+
+\begin{enumerate}[label=(\alph*)]
+\item $y_p=Ae^{-2t}$
+\item $y_p=Ate^{-2t}$ 
+\item $y_p=At^2 e^{-2t}$
+\item $y_p=(At+B)e^{-2t}$
+\item $y_p=(At^2+Bt)e^{-2t}$  
+\item $y_p=(At^3+Bt^2)e^{-2t}$  % ***
+\item $y_p=(At^3+Bt^2+Ct)e^{-2t}$  
+\item $y_p=(At^3+Bt^2+Ct+D)e^{-2t}$  
+\end{enumerate}
+
+% (f) with options through (h)
+
+\newpage
+
+\item Consider a 2nd order linear nonhomogeneous differential equation of the form $a x^2 y\,^{\prime\prime}+bx y\,^{\prime}+cy=dx^n$, where $a,b,c,d,n$ are constants and $a,d$ are non-zero. Such an equation \emph{often} has a particular solution of the form $y_p=Ax^n$ where $A$ is a non-zero constant.  Find $y(1)$ for such a solution $y(x)$ to $6x^2 y\,^{\prime\prime}+5xy\,^{\prime}-2y=\dfrac{39}{\sqrt{x^3}}$ on $(0,\infty)$. 
+
+    % 3
+    
+    % SANITY CHECK:  y=3x^(-3/2)?  y'=-9/2 x^(-5/2) and y''=45/4 x^(-7/2).  6x^2y''+5xy'-2y=135/2 x^(-3/2)-45/2 x^(-3/2)-6x^(-3/2)=39x^(-3/2)
+
+\item Which 2nd order linear nonhomogeneous differential equation has no solution of the form $y=\dfrac{A}{x^3}$ where $A$ is a constant?
+
+\begin{enumerate}[label=(\alph*)]
+\item $x^2 y\,^{\prime\prime}-2y=\dfrac{50}{x^3}$
+\item $x^2 y\,^{\prime\prime}-20y=\dfrac{50}{x^3}$
+\item $4x^2 y\,^{\prime\prime}-7xy\,^{\prime}+7y=\dfrac{50}{x^3}$
+\item $4x^2 y\,^{\prime\prime}-7xy\,^{\prime}-3y=\dfrac{50}{x^3}$
+\item $5x^2 y\,^{\prime\prime}+19xy\,^{\prime}-3y=\dfrac{50}{x^3}$ % ***
+\item $5x^2 y\,^{\prime\prime}+19xy\,^{\prime}-19y=\dfrac{50}{x^3}$
+\end{enumerate}
+
+% (e) with options through (f)
+
+
+\item Find the particular solution $y_p$ to $y\,^{\prime\prime}-2y\,^{\prime}+y=(6t+1)e^t$ that has the least number of terms.  Determine $y_p(1)$ to the nearest hundredth.
+
+    % 3e/2 \approx 4.08
+
+
+    % y_p=(at^3+bt^2)e^t ... y_p=(t^3+0.5t^2)e^t.
+    
+    % SANITY CHECK:  y=(t^3+0.5t^2)e^t, y'=(3t^2+t)e^t+(t^3+0.5t^2)e^t and y''=(6t+1)e^t+2(3t^2+t)e^t+(t^3+0.5t^2)e^t.  So y''-2y'+y=[6t+1+6t^2+2t+t^3+0.5t^2-6t^2-2t-2t^3-t^2+t^3+0.5t^2]e^t
+    % =[6t+1]e^t.
+
+\item Suppose $y(t)$ satisfies $y^{\,\prime\prime}+2y^{\,\prime}+y=2e^{-t}$, $y(0)=0$, $y^{\,\prime}(0)=0$.  Determine $y(2)$.  Round to the nearest hundredth.
+
+% 0.54
+
+% y=At^2 e^(-t).  y'=2Ate^(-t)-At^2e^(-t) and y''=2Ae^(-t)-4Ate^(-t)+At^2e^(-t) ----> (y''-2y'+y)/e^(-t)=(2A-4At+At^2)+2(2At-At^2)+(At^2)=2A=2.
+
+% So A=1.  General solution: y=(c_1+c_2 t+t^2)e^(-t).  y(0)=0=c_1.
+
+% So y=(c_2 t+t^2)e^(-t) and hence y'=(c_2 +2t)e^(-t)-(c_2 t+t^2)e^(-t). Then y'(0)=0=c_2.  So y=t^2 e^(-t)\approx 0.54 at t=2
+
+% SANITY CHECK:  (t^2e^(-t))''+2(t^2e^(-t))'+t^2e^(-t)=((t^2-2t-2t+2)e^(-t))'+2((-t^2+2t)e^(-t))+t^2e^(-t)=2e^(-t).  Hooray!
+
+
+\item Suppose $y(t)$ satisfies $y\,^{\prime\prime}+2y\,^{\prime}+5y=2\sin^{2}(t)$, $y(0)=0$, $y\,^{\prime}(0)=0$.  Determine $y(2026)$.  Round to the nearest tenth.    
+
+Hint: $2\sin^2 (t) = 1-\cos (2t)$.
+
+% 1/5-cos(2*2026)/17-4sin(2*2026)/17\approx 0.3
+
+% y''+2y'+5y=1-cos(2t).  y_(p_1)=1/5
+
+% Find y_{p_2} for y''+2y'+5y=-cos(2t):  y=Acos(2t)+Bsin(2t)
+
+% y'=-2Asin(2t)+2Bcos(2t) ...  y''=-4Acos(2t)-4Bsin(2t)
+
+%  -4Acos(2t)-4Bsin(2t)-4Asin(2t)+4Bcos(2t)+5Acos(2t)+5Bsin(2t)=[A+4B]cos(2t)+[B-4A]sin(2t) ... B=4A so 17A=-1, A=-1/17, B=-4/17
+
+% y_p = 1/5-1/17 cos(2t)-4/17 sin(2t) IS the steady-state solution!
+
+% SANITY CHECK:  y=1/5-1/17 cos(2t)-4/17 sin(2t) ... y'=2/17 sin(2t)-8/17 cos(2t) ... y''=4/17 cos(2t)+16/17 sin(2t)
+
+% 4/17 cos(2t)+16/17 sin(2t)+2(2/17 sin(2t)-8/17 cos(2t))+5(1/5-1/17 cos(2t)-4/17 sin(2t))=1-cos(2t)
+
+\item  Suppose $y(t)$ is the solution to $y\,^{\prime\prime\prime\prime}-16y=48e^{2t}$ involving the least number of terms.  Determine $y(1)$.  Round to the nearest hundredth.
+
+% 1.5e^2\approx 11.08
+
+% y_p = y =Ate^(2t)
+
+% y=1.5te^(2t)
+
+% SANITY CHECK: y'=1.5e^(2t)+3te^(2t)
+
+% y''=6e^(2t)+6te^(2t)
+
+% y'''=18e^(2t)+12te^(2t)
+
+% y''''=48e^(2t)+24te^(2t)  CHECKS OUT!!
+
+\newpage
+
+\item Sometimes it can be helpful to use $e^{iat}=\cos{(at)}+i\sin{(at)}$.  Suppose we are trying to find a particular solution to $y\,^{\prime\prime}+2y\,^{\prime}+y=125te^t \cos{(t)}$.  Follow these steps:  \\  (a) Find a particular complex-valued solution to the complex differential equation $y\,^{\prime\prime}+2y\,^{\prime}+y=125te^t (\cos{(t)}+i\sin{(t)})=125te^t e^{it}=125t e^{(1+i)t}$ of the form $y=(at+b) e^{(1+i)t}$ using that the derivative of $e^{(1+i)t}$ is $(1+i)e^{(1+i)t}$.  \\ (b) Determine the real part of the particular complex-valued solution found, which is a solution to the original equation!  Show all work.
+
+% y=(at+b)e^[(1+i)t]
+% y'=ae^[(1+i)t]+(at+b)(1+i)e^[(1+i)t]
+% y''=2a(1+i)e^[(1+i)t]+(at+b)(2i)e^[(1+i)t]
+
+% 2a(1+i)+(at+b)(2i)+2a+2(at+b)(1+i)+(at+b)=125t
+
+% at[(2i)+2(1+i)+1]=125t
+% a[3+4i]=125   ..............  a=125/(3+4i)=5(3-4i)=15-20i
+
+% 10(3-4i)(1+i)+2bi+10(3-4i)+2b(1+i)+b=0
+% 10(7-i)+2bi+10(3-4i)+2b(1+i)+b=0
+% 50(2-i)+(3+4i)b=0  ...  b=-2(2-i)(3-4i)=-2(2-11i)=-4+22i
+
+% y=[(15-20i)t+(-4+22i)]e^[(1+i)t]
+
+% Real part of y=[(15-20i)t+(-4+22i)]e^t(cos(t)+i sin(t)) is y_r=e^t[(15t-4)cos(t)+(20t-22)sin(t)]
+
+
+
+\end{enumerate}
+
+\vspace{1cm}
+
+Let $n,r$ be real numbers, $r\neq  0$ and $f(t)$ be a function.  Consider the second order linear constant coefficient nonhomogeneous differential equation\\ $y\,^{\prime\prime}-2r y\,^{\prime}+r^2 y=f(t) e^{rt}$ on an open interval $I$ on which the function $f$ is continuous.  Observe that if $y(t)=u(t)e^{rt}$ for some unknown function $u(t)$ that is twice differentiable on $I$ then
+
+\begin{eqnarray*}
+% \nonumber % Remove numbering (before each equation)
+  y\,^{\prime\prime}-2r y\,^{\prime}+r^2 y &=& (u(t)e^{rt})\,^{\prime\prime}-2r (u(t)e^{rt})\,^{\prime}+r^2 u(t)e^{rt} \\
+   &=& (u\,^{\prime}(t)e^{rt}+ru(t)e^{rt})\,^{\prime}-2r (u\,^{\prime}(t)e^{rt}+ru(t)e^{rt})+r^2 u(t)e^{rt} \\
+   &=& (u\,^{\prime\prime}(t)e^{rt}+2ru\,^{\prime}(t)e^{rt}+r^2u(t)e^{rt})-2r u\,^{\prime}(t)e^{rt}-2r^2u(t)e^{rt}+r^2 u(t)e^{rt} \\
+   &=& u\,^{\prime\prime}(t)e^{rt}.
+\end{eqnarray*}
+
+\begin{enumerate}
+
+\item[(10)] Use the above to find the particular solution $y_p$ to $y\,^{\prime\prime}-4 y\,^{\prime}+4 y=  \sqrt{t}\,e^{2t}$ on $(0,\infty)$ that has the least number of terms.   Determine $y_p(1)$.  Round to the nearest hundredth.
+
+    % 4e^2/15\approx 1.97
+
+
+
+
+\end{enumerate}
+
+
+
+\end{document}

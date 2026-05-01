@@ -1,0 +1,328 @@
+\documentclass{ximera}
+
+\ifdefined\HCode
+  \newcommand{\alttext}[1]{\HCode{<span class="sr-only">#1</span>}}
+\else
+  \newcommand{\alttext}[1]{} % Fallback for PDF view
+\fi
+
+% MATH -----------------------------------------------------------
+\newcommand{\nats}{\mathbb N}
+\newcommand{\ints}{\mathbb Z}
+\newcommand{\rats}{\mathbb Q}
+\newcommand{\reals}{\mathbb R}
+\newcommand{\complex}{\mathbb C}
+\newcommand{\powerset}{\mathscr P}
+
+%-------------------------------------------------------------
+
+%  This makes the multiple choice problems have circles next to the choices for gradescope grading.
+\newenvironment{mcenum}
+{ \begin{enumerate}[itemsep=1em, topsep=1em, label=$\bigcirc$ (\alph*), align=left]
+     }
+{ \end{enumerate}                  }
+
+
+\pgfplotsset{compat=1.18}
+\begin{document}
+\begin{abstract}
+ \end{abstract}
+
+    \title{Midterm Review Activity}
+    
+    \maketitle
+
+\section*{Exercises}
+
+
+
+\begin{enumerate}[label=(\arabic*)]
+
+\item  If $y\,^{\prime}=2x\tan{(y)}$ and $y(0)=0$ then $y\left(1\right)=$ ...
+
+\begin{mcenum}
+\item $0$ % ***
+\item $1$
+\item $2$
+\item $e$
+\item $\sin^{-1}{\left(\dfrac{\sqrt{e}}{2}\right)}$
+\item $\sin^{-1}{\left(\dfrac{e^{1/4}}{2}\right)}$ 
+\item $1$ is not within the domain of the unique solution to this IVP.
+\item This IVP has no solution.
+\end{mcenum}
+
+% (a) with options through (h)
+
+\newpage
+
+\item If $y\,^{\prime}=2x\tan{(y)}$ and $y(0)=\dfrac{\pi}{6}$ then $y\left(\dfrac{1}{2}\right)=$ ...
+
+    % cos/sin y'=2x ---> ln(sin(y))=x^2+C ---> ln(sin(y))=x^2-ln(2) ---> sin(y)=e^(x^2)/2
+
+    % y=arcsin(e^(1/4)/2)
+
+\begin{mcenum}
+\item $0$
+\item $1$
+\item $2$
+\item $e$
+\item $\sin^{-1}{\left(\dfrac{\sqrt{e}}{2}\right)}$
+\item $\sin^{-1}{\left(\dfrac{e^{1/4}}{2}\right)}$ % ***
+\item $\dfrac{1}{2}$ is not within the domain of the unique solution to this IVP.
+\item This IVP has no solution.
+\end{mcenum}
+
+% (f) with options through (h)
+
+
+\item $y^{\,\prime}=\dfrac{y}{x}+\dfrac{x}{y}$ is ... (Select all that apply.)
+
+	\begin{mcenum}
+		\item First order % ***
+		\item Second order
+		\item Linear
+		\item Separable 
+		\item Autonomous
+    	\item Nonlinear Homogeneous   % ***
+     	\item Bernoulli    % ***
+	\end{mcenum}
+
+% (a), (f), and and (g) with options through (g)
+
+
+\newpage
+
+
+\item Suppose $f(t,y)$ has continuous first order partials everywhere in $\reals^2$.  Using the (approximate) direction field of $y\,^{\prime}=f(t,y)$ on $[-3,3]\times[-3,3]$, determine which value below is the best estimate of $y(2)$ given $y(t)$ satisfies the IVP $y\,^{\prime}=f(t,y)$, $y(0)=1$.
+
+
+\begin{figure}[ht]
+    \centering
+\alttext{A direction field.}
+\begin{tikzpicture}[scale=1.35]
+	\def\s{3}	 %size of axis
+	\def\n{13}	 %number of points on axis
+	\def\l{0.25} %length of direction lines
+	
+	%AXIS
+	\draw[semithick,<->,>=stealth] (0,\s+0.5)--(0,0)--(\s+0.5,0);	  %quadrant 1
+	\draw[semithick,<->,>=stealth] (0,-\s-0.5)--(0,0)--(-\s-0.5,0);	%quadrant 4 (optional)
+	\node[above] at (0,\s+0.5) {$y$};		\node[right] at (\s+0.5,0) {$t$};
+
+    \foreach \i in {-3,-2,...,3} \draw (\i,0)--(\i,.1);
+        \foreach \j in {-3,-2,...,3} \node[below] at (\j,0) {$\j$};
+
+            \foreach \k in {-3,-2,...,3} \draw (0,\k)--(0.1,\k);
+        \foreach \s in {-3,-2,...,3} \node[left] at (0,\s) {$\s$};
+
+
+	%
+	%Write out your differential equation (optional):
+%	\node[right,align=left] at (-\s-0.25,\s+0.65) {$\frac{dy}{dx} = ... $};
+	
+	\foreach \y in {-\n,...,\n}{	%all quadrants: {-\n,...,\n}; only first: {0,...,\n}
+	\foreach \x in {-\n,...,\n}{	%NB: watch out for division by zero, e.g. dy/dx = -\y/\x
+		\draw[rotate around={atan(% arctan converts from slope to degrees
+			0.08*\x*\y-0.04*\y^2%  <-- RHS of differential equation goes here: dy\dx = ...
+		):(\x*\s/\n,\y*\s/\n)}] (\x*\s/\n-0.5*\l,\y*\s/\n)--++(\l,0);
+	} %end of x loop
+	} %end of y loop
+	\end{tikzpicture}
+    \caption{A direction field (also known as a slope field)}
+\end{figure}
+
+
+\begin{mcenum}
+\item $-2.5$
+\item $-1.5$
+\item $-0.5$
+\item $0.5$
+\item $1.5$
+\item $2.5$ % ***
+\end{mcenum}
+
+% (f) with options through (f)
+
+\newpage
+
+\item Suppose $y(x)$ satisfies $(2xy-e^x)\,\mathrm{d}x+(1+x^2)\,\mathrm{d}y=0$, $y(0)=2$.  Find $y(1)$.
+
+% F=y+x^2y-e^x .  F=1:  (1+e^x)/(1+x^2)=y.
+
+% (1+e)/2
+
+	\begin{mcenum}
+		\item[$\bigcirc$ (a)] $y(1)=0$
+		\item[$\bigcirc$ (b)] $y(1)=e-1$
+		\item[$\bigcirc$ (c)] $y(1)=\dfrac{2}{e-1}$
+		\item[$\bigcirc$ (d)] $y(1)=\dfrac{e+1}{2}$  % ***
+		\item[$\bigcirc$ (e)] $y=1+e^{-1}$
+		\item[$\bigcirc$ (f)] None of the above
+	\end{mcenum}
+
+
+% (d) with options through (f)
+
+\item  Which is an integrating factor for $y^{\,\prime}-\dfrac{y}{t+1}=e^{-t}$ for $t>-1$?
+
+
+% e^(-ln(t+1)}=(t+1)^{-1}
+
+	\begin{mcenum}
+		\item $\mu=0$
+		\item $\mu=t+1$
+		\item $\mu=\dfrac{1}{t+1}$  % ***
+		\item $\mu=-\dfrac{1}{(t+1)^2}$ 
+        \item $\mu=e^{t+1}$
+        \item $\mu=e^{1/(t+1)}$
+		\item $\mu=\cos{(2\ln{(t+1)})}$
+        \item None of these
+	\end{mcenum}
+
+% (c) with options through (h)
+
+\newpage
+
+\item Which are particular solutions to $y\,^{\prime\prime}-y=2e^x$?   Select all that apply.
+
+
+\begin{mcenum}
+\item $y=2xe^x+e^{-x}$
+\item $y=xe^x+2e^{-x}$ %***
+\item $y=(1-x)e^x+e^{-x}$
+\item $y=(1+x)e^x+2e^{-x}$  % ***
+\item $y=(1-x)e^x$
+\item $y=(1+x)e^x$ % ***
+\item $y=e^x-e^{-x}$
+\item $y=xe^{x}$  % ***
+\item $y=xe^{-x}$
+\end{mcenum}
+
+% (b), (d), (f) and (h) with options through (i)
+
+\item  Suppose $y(t)$ satisfies the IVP $y'=4t-2y$, $y(0)=0$.  Find $y(1)$.  Round to the nearest tenth.
+
+% y'+2y=4t.  (e^(2t) y)'=4te^(2t)
+
+% u=2t, dv=2e^(2t) ---> 2te^(2t)-e^(2t)+C
+
+% y=2t-1+Ce^(-2t)
+
+% Let's say C=1 so y=2t-1+e^(-2t).  SANITY CHECK:  y'+2y=2-2e(-2t)+2(2t-1+e^(-2t))=4t OH YEAH!
+
+% y(1)=1+1/e^2\approx 1.1
+
+\item Find an implicit general solution to the IVP $y\,^{\prime}=\dfrac{1}{(y-x)^2}$, $y(0)=\dfrac{1}{2}$.  Solve for $x$ such that $y(x)=1$.   Round to the nearest hundredth.
+
+    Hint: $y$ is always increasing, and based on the initial condition, $y>x$ on the solution interval.
+
+% y-x=u implies y=x+u and y'=1+u'=1/u^2 ... u'=(1-u^2)/u^2 ... u^2/(1-u^2) u'=1
+
+% -(-1+1-u^2)/(1-u^2)=-(-1/(1-u^2)+1)=1/(1-u^2)-1 ... PFD: 0.5/(1-u)+0.5/(1+u)-1
+
+% 0.5ln|(1+u)/(1-u)|-u=x+C
+
+% ln|(1+y-x)/(1-y+x)|-2y=C
+
+% ln|(1+y-x)/(1-y+x)|-2y=ln(3)-1
+
+% ln|(2-x)/x|=ln(3)+1
+
+% |2/x-1|=3e
+
+% 2/x=1+3e
+
+% x=2/(1+3e)\approx 0.22
+
+\item Solve the IVP $\displaystyle y'=(x-y)^{2}$, $y(0)=0$ and find $y(2026)$ to the nearest whole number.
+
+
+% u=x-y so y=x-u and y'=1-u'=u^(2) -> u'=1-u^2 -> 1/(1-u^2) u'=1
+
+% 0.5[1/(1+u)+1/(1-u)]u'=1 -> ln|(1+u)/(1-u)|=2x+C -> C=0 -> (1+u)/(1-u)= e^(2x) -> -1+ 2/(1-u)=e^(2x)
+
+% 2/(1-u)=1+e^(2x) -> (1-u)= 2/(1+e^(2x)) -> y = x-u = x-1 + 2/(1+e^(2x))
+
+% y(2026)\approx 2025
+
+% SANITY CHECK:  y'=1-4e^x/(1+e^(2x))^2 and (x-y)^2=(y-x)^2=[-1 + 2/(1+e^(2x))]^2=1-4/(1+e^(2x))+4/(1+e^(2x))^2=1-4/(1+e^(2x))^2 ...NICE!
+
+\item Suppose $y(t)$ satisfies the IVP $y^{\,\prime\prime}+2y^{\,\prime}+2y=2$, $y(0)=0$, $y^{\,\prime}(0)=0$.  Find $\displaystyle \lim_{t\rightarrow\infty}y(t)$.
+
+% 1
+
+\item Benny invests \$$143,000$ USD with an investment fund that will guarantee Benny a minimum rate of return of $4,000$ dollars per year before accounting for fees. This fund charges a continuously compounded fee of $0.5$ percent of assets under management.   Determine the minimum amount of money Benny could have in the fund after $10$ years (to the nearest whole number, where the units are thousands of dollars).
+
+
+    % 175
+
+    % y'=4-0.005y worst case -> y'+(1/200)y=4  -> y=Ce^(-t/200)+800.  y(0)=143:  143=C+800->C=143-800=-657.
+
+    %  y=-657e^(-t/200)+800.  y(10)\approx 175
+
+    % 175=(N-800)e^(-1/20)+800.
+
+    % (175-800)e^(1/20)=N-800
+
+        % 800+(175-800)e^(1/20)=N
+
+\newpage
+
+\item  An object of mass $1$ kg is launched vertically upward from the ground, with an initial velocity of $10$ meters per second, through a medium that exerts a resistive force proportional to the speed.  Given that the terminal velocity of the object in this medium is $-39.2$ meters per second, find the maximum height in meters reached by the object.  Use $g\approx 9.8$ meters per second squared for the magnitude of the acceleration due to gravity.  Round to the nearest tenth of a meter.
+
+    % mv'=-mg-kv here that's v'=-g-kv and -mg/k=-39.2 implies k=1/4
+
+    % v'=-9.8-v/4 ... 4v'=-(39.2+v) ... 1/(39.2+v) v'=-1/4 ... v=-39.2+49.2e^(-t/4)
+
+    % v=0:  t=4ln(49.2/39.2)\approx
+
+    % Integrate -39.2+49.2e^(-t/4) from t=0 to t=4ln(49.2/39.2)
+
+    % -39.2*4ln(49.2/39.2)-196.8[39.2/49.2-1]\approx 4.4
+
+
+ \item Suppose $y_1$ and $y_2$ are two solutions to $x^2 y^{\,\prime\prime}+4xy^{\,\prime}+4y=0$ on $(0,\infty)$ and their Wronskian $W(x)$ satisfies $W(1)=5$.  Which is $W(x)$?
+
+
+\begin{mcenum}
+\item $W(x)=5x^4$
+\item $W(x)=\displaystyle \frac{5}{x^4}$ % ***
+\item $W(x)=5e^{2x^2-2}$
+\item $W(x)=5e^{2-2x^2}$
+\item $W(x)=5$
+\item None of these
+\end{mcenum}
+
+ % (b) with options through (f)
+
+ \item Determine $y\left(e^{1/8}\right)$ given that $y(x)$ satisfies the IVP $y'=\dfrac{y}{x}+\dfrac{y^2}{x^2}$, $y(1)=4$. Round to the nearest thousandth.
+     
+     % y=4x/(1-ln(x^4))
+ 
+ % 8e^(1/8)\approx 9.065
+
+
+\item Determine $y(2026)$ given that $y(t)$ is the solution to the second order autonomous IVP $y^{\,\prime\prime}=2y^3$, $y(0)=2$, $y^{\,\prime}(0)=-4$.  Round to the nearest ten-thousandth.
+
+
+Hint: $v(t)=y^{\,\prime}(t)$ $\Rightarrow$ $v(y)$ satisfies $y^{\,\prime\prime}(t)=v^{\,\prime}(t)=v^{\,\prime}(y(t))y^{\,\prime}(t)$.  
+
+% 2/(2(2026)+1)\approx 0.0005
+
+% y'' *y'=y^2 *y'  -> 0.5(y')^2=0.5y^4+C -> (y')^2=y^4+C -> C=0.  So y'=-y^2 ->-1/y^2 y'=1
+
+% 1/y=(2t+1)/2  -> y=2/(2t+1).  SANITY CHECK:  y'=-4/(2t+1)^2 and y''=16/(2t+1)^3=2[2/(2t+1)]^3.
+
+\item Determine $y(1)$ given that $y(t)$ is the solution to the IVP \\$3y^{\,\prime\prime}+2y^{\,\prime}-y=(3-4t)e^{-t}$, $y(0)=1$, $y^{\,\prime}(0)=-1$.  Round to the nearest hundredth.
+
+% 3/(2e) \approx 0.55
+
+% y = (0.5t^2+1)/e^t
+
+% (3r-1)(r+1)=3r^2+2r-1
+
+\end{enumerate}
+
+
+
+\end{document}

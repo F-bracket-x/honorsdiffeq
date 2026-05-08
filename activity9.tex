@@ -1,0 +1,200 @@
+\documentclass{ximera}
+
+
+% MATH -----------------------------------------------------------
+\newcommand{\nats}{\mathbb N}
+\newcommand{\ints}{\mathbb Z}
+\newcommand{\rats}{\mathbb Q}
+\newcommand{\reals}{\mathbb R}
+\newcommand{\complex}{\mathbb C}
+\newcommand{\powerset}{\mathscr P}
+
+%-------------------------------------------------------------
+
+\pgfplotsset{compat=1.18}
+\begin{document}
+\begin{abstract}
+ \end{abstract}
+
+    \title{Class Discussion Activity 9}
+    
+    \maketitle
+
+\section*{Exercises}
+
+
+
+\begin{enumerate}[label=(\arabic*)]
+
+\item In attempting to use the Reduction of Order formula\\ $y_1 z\,^{\prime}  +(2y_1\,^{\prime}+py_1)z=f$ to solve $x^2 y\,^{\prime\prime} +axy\,^{\prime}-ay=2x$, where $a$ is a nonzero constant, given that $y_1=x$ satisfies $x^2 y\,^{\prime\prime} +a xy\,^{\prime}-ay=0$, what should $p,f$ be?
+
+
+\begin{enumerate}[label=(\alph*)]
+\item $p=ax$, $f=2x$
+\item $p=-a$, $f=2x$
+\item $p=ax^{-1}$, $f=2x^{-1}$  %%%
+\item $p=ax^{-2}$, $f=2x^{-1}$
+\item $p=x^2$, $f=2x$ 
+\item None of these
+\end{enumerate}
+
+% (c) with options through (f)
+
+\item Consider the second order linear homogeneous differential equation \\$xy\,^{\prime\prime}-(4x+1)y\,^{\prime}+(4x+2)y=0$ on $(0,\infty)$.  One solution to this equation is $y_1=e^{2x}$.  Use Reduction of Order to determine a first order linear differential equation $z=u\,^{\prime}$ must satisfy.
+
+ % p=-4-1/x, y_1=e^(2x) and f=0
+
+%    e^(2x) z' +(4e^(2x)+(-4-1/x)e^(2x))z=0
+
+%    e^(2x) z' -1/x e^(2x) z=0
+
+%    z' -1/x z=0
+
+
+\begin{enumerate}[label=(\alph*)]
+\item $z\,^{\prime}+\dfrac{1}{x}z=0$
+\item $z\,^{\prime}-\dfrac{1}{x}z=0$  % ***
+\item $z\,^{\prime}+\left(4+\dfrac{1}{x}\right)z=0$
+\item $z\,^{\prime}-\left(4+\dfrac{1}{x}\right)z=0$
+\item $z\,^{\prime}+\left(4-\dfrac{1}{x}\right)z=0$
+\item $z\,^{\prime}-\left(4-\dfrac{1}{x}\right)z=0$
+\end{enumerate}
+
+% (b) with options through (f)
+
+\newpage
+
+\item Suppose $y(x)$ satisfies the IVP $xy\,^{\prime\prime}-(4x+1)y\,^{\prime}+(4x+2)y=0$, $y(1)=0$, $y\,^{\prime}(1)=2$ on $(0,\infty)$.  Determine $y(2)$.  Round to the nearest hundredth.
+
+    % y(2)=3e^2\approx 22.17
+
+% y=(c_1 x^2 +c_2)e^(2x) ... y(1)=0=(c_1+c_2)e^2 implying that c_2=-c_1.
+
+% y=c(x^2-1)e^(2x).  y'=2c[xe^(2x)+(x^2-1)e^(2x)].  y'(1)=2=2ce^2 ... c=e^(-2).
+
+% y=(x^2-1)e^(2(x-1)).
+
+
+\item Given that $y_1=\dfrac{\sin{(x)}}{\sqrt{x}}$ is a solution to $x^2y\,^{\prime\prime}+xy\,^{\prime}+\left(x^2-\dfrac{1}{4}\right)y=0$ on $(0,\infty)$, find the solution $y_2$ to this differential equation involving the least number of terms such that $\{y_1,y_2\}$ form a fundamental set of solutions and $y_2(1)=1$.  Determine $y_2(2)$ to the nearest hundredth.
+
+    % -0.54
+
+    % y_1z'+(2y_1'+py_1)z=0.  Here p=1/x.  sin(x)/sqrt(x)z'+(2(cos(x)sqrt(x)-sin(x)/(2sqrt(x)))/x+sin(x)/x^(3/2))z=0
+
+    % sin(x)/sqrt(x)z'+((2xcos(x)-sin(x))/x^(3/2)+sin(x)/x^(3/2))z=0
+
+    % sin(x)/sqrt(x)z'+[2cos(x)/sqrt(x)] z=0
+
+    % sin(x) z' + 2cos(x) z=0
+
+    % sin^2(x) z' + 2sin(x)cos(x) z=0
+
+    % [sin^2(x) z]'=0
+
+    % sin^2(x) z = C
+
+    % z=u' = C csc^2(x) ... u=C cot(x).  y=C cos(x)/sqrt(x) ... C=1/cos(1).  y_2=[1/cos(1)][cos(x)/sqrt(x)].
+
+    % y_2(2)=[1/cos(1)][cos(2)/sqrt(2)]\approx -0.54
+
+
+
+
+\item Given that $y_1=e^x$ is a solution to $xy\,^{\prime\prime}-(x+1)y\,^{\prime}+y=0$ on $(0,\infty)$, use Reduction of Order to find the general solution to\\ $xy\,^{\prime\prime}-(x+1)y\,^{\prime}+y=x^2$.
+
+
+\begin{enumerate}[label=(\alph*)]
+\item $y=-x^2+c_1x+c_2e^x$
+\item $y=x^2+c_1x+c_2e^x$
+\item $y=-x^2+c_1(x+1)+c_2e^x$ % ***
+\item $y=x^2+c_1(x+1)+c_2e^x$
+\item $y=-x+c_1x^2+c_2e^x$
+\item $y=x+c_1x^2+c_2e^x$
+\item $y=-x-1+c_1x^2+c_2e^x$
+\item $y=x+1+c_1x^2+c_2e^x$
+\end{enumerate}
+
+% (c) with options through (h)
+
+
+
+
+\item Suppose $y(x)$ satisfies $x^2 y\,^{\prime\prime}+4xy\,^{\prime}-4y=\frac{25}{x^4}$, $y(1)=0$, $y\,^{\prime}(1)=0$ on $(0,\infty)$.  Find $y(2026)$.  Round to the nearest whole number.
+
+% 2026
+
+% Canned:  y_1=x and p=4x^(-1) and f=25x^(-6).  So x z'+(2+4)z=25x^(-6) ---->  x^6 z'+(6x^5)z=(x^6 z)'=25x^(-1)
+
+% So x^6 z=25ln(x)+c_1 ---> z=u'=25x^(-6)ln(x)+c_1 x^(-6) ---> u=-5x^(-5)ln(x)-5x^(-5)+c_1x^(-5)+c_2
+
+% So y=-5x^(-4)ln(x)+c_1x^(-4)+c_2x.  0=c_1+c_2
+
+% Also y'=20x^(-4)ln(x)-5x^(-5)-4c_1x^(-5)+c_2.  0=-5-4c_1+c_2 -> c_1=-1 and c_2=1
+
+% So y=-5x^(-4)ln(x)-x^(-4)+x.  Checks out!
+
+% Integrate by parts: u=ln(x), dv=25x^(-6)dx,
+%                     du=1/x dx and v=-5x^(-5)
+
+
+\item Suppose $y(x)$ satisfies $x^2 y\,^{\prime\prime} +xy\,^{\prime}-y=x$, $y(1)=0$, $y\,^{\prime}(1)=0$ on $(0,\infty)$.  Determine $y(2)$.  Round to the nearest hundredth.
+
+
+% 0.32
+
+% Canned:  y_1=x and p=f=1/x.  So x z'+(2+1)z=1/x ---> xz'+3z=1/x ---> x^3 z'+3x^2 z=x so (x^3 z)'=x so x^3 z=x^2 /2 +c_1 so z=u'=1/(2x) + c_1 /x^3
+
+% So u= (1/2)(ln(x))+c_1/x^2 +c_2 ---->  y=(x/2)(ln(x))+c_1 /x +c_2 x
+
+% y=(x/2)(ln(x))  ----> y'=(1/2)(ln(x))+(1/2) ----> y''=1/(2x).
+
+% x^2 y''+xy' -y= x/2+(x/2)(ln(x))+(x/2)-(x/2)(ln(x)) =x YES!
+
+% Want answer to be y= (x/2)(ln(x)) + (1/4)/x - (1/4)x.  So y'=(1/2)(ln(x))+(1/2) - (1/4)/x^2 -1/4 is zero at x=1.
+
+% System... 0=c_1+c_2.  y'=(1/2)(ln(x))+(1/2)-c_1/x^2 +c_2.  0=1/2 -c_1+c_2.
+
+% y(2)=ln(2) + 1/8 - 1/2=0.32
+
+
+\item Suppose $y(x)$ satisfies the IVP $x^2 y\,^{\prime\prime}+4x y\,^{\prime}+2y=2$, $y(0)=0$, $y\,^{\prime}(0)=0$  on $(0,\infty)$.  Find $\displaystyle \lim_{x\rightarrow \infty}y(x)$.  Round to the nearest tenth.
+
+% 1
+
+% m(m-1)+4m+2=m^2+3m+2=(m+1)(m+2)
+
+
+\item  Which of the following cannot be a solution to a homogeneous Euler equation (for $x>0$)?  Select all that apply.
+
+\begin{enumerate}[label=(\alph*)]
+\item $\displaystyle y=\frac{x^2-1}{x}$ 
+\item $\displaystyle y=\frac{1}{x}+\frac{\ln(x)}{x^2}$  % ***
+\item $y=(1+\ln(x^{-2}))\sqrt{x^3}$
+\item $y=x\cos{\left(7\ln{(x)}\right)}$
+\item $y=x^2\sin{\left(\ln{(x)}\right)}-x^2\cos{\left(\ln{(x)}\right)}$
+\item $y=\sin{\left(\ln{(x)}\right)}+x\cos{\left(\ln{(x)}\right)}$ % ***
+\end{enumerate}
+
+% (b) and (f) with options through (f)
+
+\newpage
+
+\item Suppose $y(x)$ satisfies $y\,^{\prime\prime}=\dfrac{20(y+1)}{x^2}$ on $(0,\infty)$ and the graph of $y(x)$ touches, but does not cross the $x$-axis at $(1,0)$.  Determine $y(2)$.  Round the nearest thousandth.
+
+    % x^2 y''=20+20y-> x^2 y''-20y=20.  y_p=-1.  m^2-m+20=(m-5)(m+4)=0.  Fund. set of complementary solutions: {x^5,x^(-4)}.
+
+    % y=-1+c_1x^5+c_2x^(-4).  0=-1+c_1+c_2.
+
+  % y'=5c_1x^4-4c_2x^(-5).  0=5c_1-4c_2 --> c_1=0.8c_2 -->  1=1.8c_2 -> c_2=5/9 and c_1=4/9
+
+  % y=-1+(4/9)x^5+(5/9)x^(-4).
+
+% At 2, y\approx 13.257
+
+
+
+\end{enumerate}
+
+
+
+\end{document}

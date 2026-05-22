@@ -1,0 +1,163 @@
+\documentclass{ximera}
+
+
+
+
+% MATH -----------------------------------------------------------
+\newcommand{\nats}{\mathbb N}
+\newcommand{\ints}{\mathbb Z}
+\newcommand{\rats}{\mathbb Q}
+\newcommand{\reals}{\mathbb R}
+\newcommand{\complex}{\mathbb C}
+\newcommand{\powerset}{\mathscr P}
+\newcommand{\Laplace}[1]{\ensuremath{\mathcal{L}{\left[#1\right]}}}
+\newcommand{\InvLap}[1]{\ensuremath{\mathcal{L}^{-1}{\left[#1\right]}}}
+
+%-------------------------------------------------------------
+
+\pgfplotsset{compat=1.18}
+\begin{document}
+\begin{abstract}
+ \end{abstract}
+
+    \title{Class Discussion Activity 13}
+    
+    \maketitle
+
+\section*{Exercises}
+
+
+
+\begin{enumerate}[label=(\arabic*)]
+
+
+\item Which is the Laplace transform of the solution $y(t)$ to the IVP \\$y\,^{\prime\prime}+4y=\sin{(2t)}$, $y(0)=0$, $y\,^{\prime}(0)=0$?
+
+
+% (s^2+4)Y=2/(s^2+4)
+
+% Y=2/(s^4+8s^2+16)
+
+
+\begin{enumerate}[label=(\alph*)]
+\item $\dfrac{1}{s^2+4}$
+\item $\dfrac{2}{s^2+4}$
+\item $\dfrac{1}{s^4+16}$
+\item $\dfrac{2}{s^4+16}$
+\item $\dfrac{1}{s^4+8s^2+16}$
+\item $\dfrac{2}{s^4+8s^2+16}$  % ***
+\end{enumerate}
+
+% (f) with options through (f)
+
+
+\item Suppose $f(t)$ is a continuous function on $[0,\infty)$ and $\mathcal{L}(f(t))=\frac{5}{s^2+1}$.  Which is the Laplace transform of the solution to $y^{\,\prime}-2y=f(t)$, $y(0)=0$?
+
+% Y=4/[(s^2+1)(s-2)]=4/(s^3-2s^2+s-2)
+
+\begin{enumerate}[label=(\alph*)]
+\item $\frac{5s-10}{s^2+1}$
+\item $\frac{5}{s^3-s^2-2}$
+\item $\frac{5}{s^3-2s^2+s-2}$  % ***
+\item $\frac{5}{s^3-s^2+2}$
+\item $\frac{5}{s^3-2s^2-s+2}$
+\item None of these
+\end{enumerate}
+
+% (c) with options through (f)
+
+\newpage
+
+
+\item  Which is the Laplace transform of the solution to the IVP \\$y\,^{\prime\prime}+4y\,^{\prime}+4y=te^{-2t}$, $y(0)=1$, $y^{\,\prime}(0)=2$?
+
+% s^2 Y-s-2+4sY-4+4Y=1/(s+2)^2
+
+% Y=[(s+6)(s+2)^2+ 1]/(s+2)^4
+
+% Y=[(s+6)(s^2+4s+4)+ 1]/(s+2)^4
+
+% Y=[s^3+4s^2+4s+6s^2+24s+24+ 1]/(s+2)^4
+
+% Y=[s^3+10s^2+28s+25]/(s+2)^4
+
+
+\begin{enumerate}[label=(\alph*)]
+\item $\dfrac{s^3+10s^2+28s+25}{(s+2)^4}$  % ***
+\item $\dfrac{2s^3+14s^2+44s+37}{(s+2)^4}$
+\item $\dfrac{s^3+12s^2+36s+50}{(s+2)^4}$
+\item $\dfrac{2s^3+16s^2+52s+65}{(s+2)^4}$
+\item $\dfrac{s^3+6s^2+4s+25}{(s+2)^4}$
+\item $\dfrac{1}{(s+2)^4}$
+\end{enumerate}
+
+% (a) with options through (f)
+
+
+\item Suppose $Y(s)$ is the Laplace transform of $y(t)$ and we are given $y(0)=1$, $y\,^{\prime}(0)=2$, and $y\,^{\prime\prime}(0)=3$.  Given $Y(2)=4$ find $\mathcal{L}[y\,^{\prime\prime\prime}]$ at $s=2$.
+
+% s^3 Y-s^2-2s-3 ---->  8*4-4-4-3 = 32-11 = 21
+
+
+\item Suppose $y(t)$ satisfies $y^{\,\prime\prime\prime}+8y=t$, $y(0)=0$, $y^{\,\prime}(0)=1$, $y^{\,\prime\prime}(0)=-1$ and $Y(s)=\mathcal{L}(y(t))$.  Determine $Y(2)$.  Round to the nearest hundredth.
+
+
+% (s^3+8)Y-s+1=1/s^2 --> At s=2, 16Y-1=1/4 so 16Y=5/4 so Y=5/64\approx 0.08
+
+
+\item Suppose $y(t)$ satisfies $y^{(4)}-y=0$, $y(0)=0$, $y\,^{\prime}(0)=1$, $y\,^{\prime\prime}(0)=0$, $y\,^{\prime\prime\prime}(0)=0$.  Use Laplace transforms to solve this IVP. Determine $y(\pi)$.  Round to the nearest hundredth.
+
+% 5.77
+
+% s^4Y-s^2-Y=0 ... s^2/(s^4-1) = (1/4)/(s-1)-(1/4)/(s+1)+(1/2)/(s^2+1) ... y(t) = 0.25e^t - 0.25e^(-t) + 0.5 sin(t)
+
+
+
+
+\item Suppose that the Laplace transform of $f(t)$ is $F(s)=\dfrac{5s}{s^2+2s+2}$ and that $y(t)$ satisfies $y^{\,\prime}-y=f(t)$, $y(0)=0$.  Determine $y(\pi)$.  Round to the nearest tenth.
+
+    % (s-1)Y=5s/[s^2+2s+2]. So Y=5s/[(s-1)(s^2+2s+2)]=1/(s-1)+(As+B)/(s^2+2s+2).  So 5s=s^2+2s+2+As^2-As+Bs-B ---> A=-1, B=2.  So
+
+    % Y=1/(s-1)+(-s+2)/(s^2+2s+2)==1/(s-1)+(-(s+1)+3)/[(s+1)^2+1] ----> y=e^t +e^(-t)[-cos(t)+3sin(t)]
+
+    % At t=pi ----> y=e^(pi)+e^(-pi)\approx 23.2
+
+
+\item Suppose $f(t)$ is a continuous function and that the Laplace transform of the solution to $y^{\,\prime\prime}+4y=f(t)$, $y(0)=1$, $y^{\,\prime}(0)=1$ is\\  $\displaystyle Y(s)=\frac{s^5+s^4+8s^3+8s^2+20s+16}{(s^2+4)^3}$.  Find $f(2026)$ to the nearest tenth.
+
+%  f(t)=t*sin(2t)
+
+
+% f(2026)=2026sin(4052)\approx -1233.4
+
+
+
+\newpage
+
+\item Let $f(t)$ be a piecewise continuous function on $[0,\infty)$.  One can show that if $F(s)=\mathcal{L}[f(t)]=\displaystyle \int_0^{\infty} f(t)e^{-st}\,dt$ then $-F\,^{\prime}(s)=\mathcal{L}[tf(t)]$.  Let $Y(s)$ be the Laplace transform of the solution $y(t)$ to the IVP \\$y\,^{\prime\prime}-ty=0$, $y(0)=1$, $y\,^{\prime}(0)=0$.   Which first order linear differential equation must $Y(s)$ satisfy? 
+
+\begin{enumerate}[label=(\alph*)]
+   \item $Y^{\,\prime}-s^2Y=-s$
+   \item $Y^{\,\prime}-s^2Y=s$
+   \item $Y^{\,\prime}+s^2Y=-s$
+   \item $Y^{\,\prime}+s^2Y=s$ % ***
+   \item $Y^{\,\prime}-s^2Y=-1$
+   \item $Y^{\,\prime}-s^2Y=1$
+   \item $Y^{\,\prime}+s^2Y=-1$
+   \item $Y^{\,\prime}+s^2Y=1$ 
+\end{enumerate}
+
+% (d) with options through (h)
+
+
+\item Consider the IVP $ty\,^{\prime\prime}+y^{\,\prime}+ty=\cos(t)$, $y(0)=0$, $y^{\,\prime}(0)=1$.  Solve it using Laplace transforms.  Show all work.
+
+Hint: you will have to solve a first order linear nonhomogeneous differential equation to determine $Y(s)=\Laplace{y(t)}$.
+
+    
+
+\end{enumerate}
+
+
+
+\end{document}

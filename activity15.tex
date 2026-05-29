@@ -1,0 +1,191 @@
+\documentclass{ximera}
+
+\ifdefined\HCode
+  \newcommand{\alttext}[1]{\HCode{<span class="sr-only">#1</span>}}
+\else
+  \newcommand{\alttext}[1]{} % Fallback for PDF view
+\fi
+
+
+% MATH -----------------------------------------------------------
+\newcommand{\nats}{\mathbb N}
+\newcommand{\ints}{\mathbb Z}
+\newcommand{\rats}{\mathbb Q}
+\newcommand{\reals}{\mathbb R}
+\newcommand{\complex}{\mathbb C}
+\newcommand{\powerset}{\mathscr P}
+\newcommand{\Laplace}[1]{\ensuremath{\mathcal{L}{\left[#1\right]}}}
+\newcommand{\InvLap}[1]{\ensuremath{\mathcal{L}^{-1}{\left[#1\right]}}}
+
+%-------------------------------------------------------------
+
+\pgfplotsset{compat=1.18}
+\begin{document}
+\begin{abstract}
+ \end{abstract}
+
+    \title{Class Discussion Activity 15}
+    
+    \maketitle
+
+\section*{Exercises}
+
+\begin{enumerate}[label=(\arabic*)]
+
+
+\item Evaluate $\delta(t-1)\ast t^2$ at $t=2$.  
+
+% 1
+
+% Laplace=2e^(-s)/s^3.  Inverse Laplace of that is U(t-1)[(t-1)^2]
+
+
+\item Suppose $y(t)$ satisfies the integral equation $\displaystyle y(t)+\int_0^t y(x)(x-t)\,\mathrm{d}x=1$.  Determine $y(1)$.  Round to the nearest thousandth.
+
+% 1.175
+
+% Y-Y/s^2=1/s
+
+% s^2Y-Y=s
+
+% (s^2-1)Y=s
+
+% Y=s/(s^2-1)=0.5[1/(s-1)-1/(s+1)]
+
+% y=0.5[e^t-e^{-t}]=sinh(t)
+
+% y=cosh(1)\appprox 1.175
+
+
+
+\item Suppose $y(t)$ satisfies the integral equation $\displaystyle y(t)+4\int_0^t  x^2y(t-x)\,\mathrm{d}x=1$.  Determine $y(1)$.  Round to the nearest thousandth.
+
+
+  Hint:  $s^3+a^3=(s+a)(s^2-as+a^2)$.
+
+    % y(1)=(1/3)[e^(-2)+2e*cos(sqrt(3))]\approx -0.246
+
+
+    % Y+8Y/s^3=1/s ... Y=s^2/(s^3+8)
+
+    % Y=s^2/(s^3+8)=s^2/[(s+2)(s^2-2s+4)]=(1/3)/(s+2)+((2/3)s-(2/3))/(s^2-2s+4)
+
+    % Y=(1/3)[1/(s+2)+2(s-1)/[(s-1)^2+3]]
+
+    % y=(1/3)[e^(-2t)+2e^t*cos(sqrt(3)t)]
+
+
+\item Suppose $y(t)$ satisfies $\displaystyle y(t)+\int_0^t  (t-x)\,y(x)\,dx=\delta{(t-\pi)}$.  Find $y(4)$ to the nearest tenth.
+
+
+% Y+Y/s^2=e^(- pi s) --> (s^2+1)/s^2 Y=e^(- pi s) ---> Y=e^(- pi s)[(s^2+1)-1]/(s^2+1)=e^(- pi s)[1-1/(s^2+1)] ---> y=U(t-pi){delta(t-pi)+sin(t)}
+
+% sin(4)\approx -0.8
+
+\item Suppose $y(t)$ satisfies the integro-differential IVP \\$\displaystyle y\,^{\prime}(t)-\int_0^t y(x)\cos{(t-x)}\,\mathrm{d}x=t$, $y(0)=1$.  Determine $y(1)$ to the nearest hundredth.
+
+
+    %  49/24\approx 2.04
+
+    % sY-1-sY/(s^2+1)=1/s^2
+
+    % sY-sY/(s^2+1)=(s^2+1)/s^2
+
+    % sY-sY/(s^2+1)=(s^2+1)/s^2
+
+    % Y(s^3/(s^2+1))=(s^2+1)/s^2
+
+    % Y=(s^2+1)^2/s^5=1/s+2/s^3+1/s^5 ... y(t)=1+t^2+(1/24)t^4
+
+\newpage
+
+
+\item Let $f(t)$ and $g(t)$ be continuous functions for $t\geq 0$.  Which is the product of the Laplace transforms $\mathcal{L}(f)\mathcal{L}(g)$ as an improper double integral over region $R$ consisting of the entire first quadrant of the $xy$-plane?  
+    
+     Hint:  Replace the ``t" in one integral with ``x" and in the other integral with ``y" and then bring one integral into the other as a constant.
+
+\begin{enumerate}[label=(\alph*)]
+\item $\displaystyle \int_0^{\infty}\int_0^{\infty}f(x)g(y)e^{-s(x+y)}\,\mathrm{d}y\,\mathrm{d}x$  % ***
+\item $\displaystyle \int_0^{\infty}\int_0^{\infty}f(x)g(x)e^{-s(x+y)}\,\mathrm{d}y\,\mathrm{d}x$  
+\item $\displaystyle \int_0^{\infty}\int_0^{\infty}f(x)g(y)e^{s(x+y)}\,\mathrm{d}y\,\mathrm{d}x$
+\item $\displaystyle \int_0^{\infty}\int_0^{\infty}f(y)g(y)e^{s(x+y)}\,\mathrm{d}y\,\mathrm{d}x$
+\item $\displaystyle \int_0^{\infty}\int_0^{\infty}f(x)g(y)e^{-s(x-y)}\,\mathrm{d}y\,\mathrm{d}x$
+\item $\displaystyle \int_0^{\infty}\int_0^{\infty}f(x)g(y)e^{s(x-y)}\,\mathrm{d}y\,\mathrm{d}x$
+\end{enumerate}
+
+% (a) with options through (f)
+
+\item Taking the correct answer from the previous exercise, which is the result of applying the substitution $t=x+y$ on the $``$inner" integral (where $x$ is regarded as a constant)?
+    
+    
+\begin{enumerate}[label=(\alph*)]
+\item $\displaystyle \int_0^{\infty}\int_x^{\infty}f(x)g(t-x)e^{st}\,\mathrm{d}t\,\mathrm{d}x$
+\item $\displaystyle \int_0^{\infty}\int_x^{\infty}f(x)g(t)e^{st}\,\mathrm{d}t\,\mathrm{d}x$
+\item $\displaystyle \int_0^{\infty}\int_x^{\infty}f(x)g(t)e^{-st}\,\mathrm{d}t\,\mathrm{d}x$
+\item $\displaystyle \int_0^{\infty}\int_0^x f(x)g(t-x)e^{-st}\,\mathrm{d}t\,\mathrm{d}x$  
+\item $\displaystyle \int_0^{\infty}\int_x^{\infty}f(x)g(t-x)e^{-st}\,\mathrm{d}t\,\mathrm{d}x$  % ***
+\item None of these
+\end{enumerate}
+
+
+
+% (e) with options through (f)
+
+\newpage
+
+
+\item Taking the correct answer from the previous exercise, which is the result of reversing the order of integration? What does this prove?
+
+\begin{enumerate}[label=(\alph*)]
+\item $\displaystyle \int_0^{\infty}\int_0^tf(x)g(t-x)e^{st}\,\mathrm{d}x\,\mathrm{d}t$
+\item $\displaystyle \int_0^{\infty}\int_t^{\infty}f(x)g(x-t)e^{-st}\,\mathrm{d}x\,\mathrm{d}t$
+\item $\displaystyle \int_0^{\infty}\int_0^tf(x)g(t-x)e^{st}\,\mathrm{d}x\,\mathrm{d}t$
+\item $\displaystyle \int_0^{\infty}\int_0^tf(x)g(t-x)\,\mathrm{d}x\,e^{-st}\,\mathrm{d}t$  % ***
+\item $\displaystyle \int_0^{\infty}\int_t^{\infty} f(x)g(t-x)e^{-st}\,\mathrm{d}x\,\mathrm{d}t$
+\item None of these
+\end{enumerate}
+
+
+% (d) with options through (f)
+
+
+
+
+
+
+\item Use Euler's method to estimate $y(0.6)$, where $y$ is the unique solution to the IVP $y\,^{\prime}=1- x^y$, $y(0)=1$, using a step size of $\Delta x=0.2$.  Round your estimate to the nearest ten-thousandth. 
+
+
+    % y(0.2)\approx 1+[1-0^1](0.2)=1.2
+
+    % y(0.4)\approx 1.2+[1-(0.2)^(1.2)](0.2)=1.37100881345
+
+    % y(0.6)\approx 1.37100881345+[1-(0.4)^(1.37100881345)](0.2)\approx 1.5141
+
+
+\item Use Euler's method to estimate $y(2)$, where $y$ is the unique solution to the IVP $y\,^{\prime}=x^2+y^3$, $y(0)=0$, using a step size of $\Delta x=0.25$.  Round your estimate to the nearest tenth. 
+
+    % y(0.25)\approx 0+[0^2+0^3](0.25)=0
+
+    % y(0.5)\approx 0+[(0.25)^2+0^3](0.25)=0.015625
+
+    % y(0.75)\approx 0.015625+[(0.5)^2+(0.015625)^3](0.25)=0.07812595367
+
+    % y(1)\approx 0.07812595367+[(0.75)^2+(0.07812595367)^3](0.25)=0.218870167329495
+
+    % y(1.25)\approx 0.218870167329495+[(1)^2+(0.218870167329495)^3](0.25)=0.47149136466
+
+    % y(1.5)\approx 0.47149136466+[(1.25)^2+(0.47149136466)^3](0.25)=0.88831998134
+
+    % y(1.75)\approx 0.88831998134+[(1.5)^2+(0.88831998134)^3](0.25)=1.62606605706
+
+    % y(2)\approx 1.62606605706+[(1.75)^2+(1.62606605706)^3](0.25)\approx  3.5
+
+
+
+
+\end{enumerate}
+
+
+
+\end{document}

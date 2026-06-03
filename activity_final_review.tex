@@ -1,0 +1,349 @@
+\documentclass{ximera}
+
+\ifdefined\HCode
+  \newcommand{\alttext}[1]{\HCode{<span class="sr-only">#1</span>}}
+\else
+  \newcommand{\alttext}[1]{} % Fallback for PDF view
+\fi
+
+% MATH -----------------------------------------------------------
+\newcommand{\nats}{\mathbb N}
+\newcommand{\ints}{\mathbb Z}
+\newcommand{\rats}{\mathbb Q}
+\newcommand{\reals}{\mathbb R}
+\newcommand{\complex}{\mathbb C}
+\newcommand{\powerset}{\mathscr P}
+
+%-------------------------------------------------------------
+
+%  This makes the multiple choice problems have circles next to the choices for gradescope grading.
+\newenvironment{mcenum}
+{ \begin{enumerate}[itemsep=1em, topsep=1em, label=$\bigcirc$ (\alph*), align=left]
+     }
+{ \end{enumerate}                  }
+
+
+\pgfplotsset{compat=1.18}
+\begin{document}
+\begin{abstract}
+ \end{abstract}
+
+    \title{Class Discussion Final Review Activity}
+    
+    \maketitle
+
+\section*{Exercises}
+
+
+
+\begin{enumerate}[label=(\arabic*)]
+
+\item Which IVPs are satisfied by $y=0$?   Select all that apply.
+
+\begin{enumerate}[label=(\alph*)]
+		\item[$\bigcirc$ (a)] $y\,^{\prime\prime}=y$, $y(0)=0$, $y\,^{\prime}(0)=0$% ***
+		\item[$\bigcirc$ (b)] $y\,^{\prime\prime}=y+1$, $y(0)=0$, $y\,^{\prime}(0)=0$
+		\item[$\bigcirc$ (c)] $y\,^{\prime\prime}+2y\,^{\prime}+y=t$, $y(0)=0$, $y\,^{\prime}(0)=0$
+		\item[$\bigcirc$ (d)] $y\,^{\prime\prime}+2y\,^{\prime}+y=0$, $y(0)=0$, $y\,^{\prime}(0)=0$ % ****
+		\item[$\bigcirc$ (e)] $y\,^{\prime\prime}=\dfrac{y}{y^2+1}$, $y(0)=1$, $y\,^{\prime}(0)=0$
+     	\item[$\bigcirc$ (f)] $y\,^{\prime\prime}+y\,^{\prime}=1-e^y$, $y(0)=0$, $y\,^{\prime}(0)=0$  % ***
+\end{enumerate}
+
+
+% (a), (d) and (f) with options through (f)
+
+
+\item Suppose $y$ and $\bar{y}$ are particular solutions to the second-order linear non-homogeneous ordinary differential equation $y\,^{\prime\prime}+xy\,^{\prime}-y=x^2+2$.  Which function(s) below would also be particular solutions to \\$y\,^{\prime\prime}+xy\,^{\prime}-y=x^2+2$?   Select all that apply.
+
+\begin{enumerate}[label=(\alph*)]
+		\item[$\bigcirc$ (a)] $y-\bar{y}$
+		\item[$\bigcirc$ (b)] $y+\bar{y}$
+		\item[$\bigcirc$ (c)] $2y-\bar{y}$  % ***
+		\item[$\bigcirc$ (d)] $2y+\bar{y}$ 
+     	\item[$\bigcirc$ (e)] $-y+2\bar{y}$ % ***
+     	\item[$\bigcirc$ (f)] $y=0$
+\end{enumerate}
+
+% (c) and (e) with options through (f)
+
+
+\newpage
+
+
+\item If one uses the substitution $\displaystyle u=\frac{y}{x}$ to transform the differential equation\\ $\displaystyle y\,^{\prime}=\frac{y}{x-y}$ then determine a differential equation that $u$ must satisfy.
+
+\begin{enumerate}[label=(\alph*)]
+		\item[$\bigcirc$ (a)] $\displaystyle xu^{\prime}=\frac{u^2}{1-u}$   % ***
+		\item[$\bigcirc$ (b)] $\displaystyle xu^{\prime}=\frac{u}{1-u}$
+		\item[$\bigcirc$ (c)] $\displaystyle u^{\prime}=\frac{u^2}{1-u}$
+ 		\item[$\bigcirc$ (d)] $\displaystyle u^{\prime}=\frac{u}{u-1}$
+		\item[$\bigcirc$ (e)] $\displaystyle xu^{\prime}=\frac{1}{u-1}$
+		\item[$\bigcirc$ (f)] None of these
+\end{enumerate}
+
+
+% (a) with options through (f)
+
+
+\item Suppose $y(x)$ is a solution of $2 y\,^{\prime}(x) + y(x) = 1.$  Let $x(t) = \ln(t)$.  Then $u(t)=y(\ln{(t)})$ satisfies which ordinary differential equation?  Hint:  By the Chain Rule, $u\,^{\prime}(t)=y\,^{\prime}(x)x^{\prime}(t)$.
+
+
+\begin{enumerate}[label=(\alph*)]
+	\item[$\bigcirc$ (a)] $2 t u\,^{\prime}(t) - u(t) = 1$
+
+	\item[$\bigcirc$ (b)] $2 u\,^{\prime}(t) - 2 u(t) = 1$
+
+	\item[$\bigcirc$ (c)] $2 u\,^{\prime}(t) + t u(t) = 1$
+
+	\item[$\bigcirc$ (d)] $2 t u\,^{\prime}(t) + u(t) = 1$  % ***
+
+	\item[$\bigcirc$ (e)] $2 t u\,^{\prime}(t) + u(t) = -1$
+
+	\item[$\bigcirc$ (f)] None of these
+\end{enumerate}
+
+
+% y'(t)=y'(x)x'(t)=y'(x)/t so y'(x)=ty'(t).  So 2ty'(t)+y(t)=1.  (d) with options through (f)
+
+\item Which are particular solutions to $x^2y\,^{\prime\prime}+xy\,^{\prime}-4y=x$?   Select all that apply.
+
+
+
+\begin{enumerate}[label=(\alph*)]
+		\item[$\bigcirc$ (a)] $y=0$ 
+		\item[$\bigcirc$ (b)] $\displaystyle  y=\frac{x}{3}$ 
+		\item[$\bigcirc$ (c)] $\displaystyle  y=-\frac{x}{3}$ % ***
+		\item[$\bigcirc$ (d)] $\displaystyle  y=\frac{1-x^3}{3x^2}$  % ***
+ 		\item[$\bigcirc$ (e)] $\displaystyle  y=\frac{1+x^3}{3x^2}$
+ 		\item[$\bigcirc$ (f)] $\displaystyle  y=\frac{x^4-4}{x^2}$
+ 		\item[$\bigcirc$ (g)] $\displaystyle  y=\frac{x^4-1-x^3}{3x^2}$  % ***
+
+	\end{enumerate} 
+    
+% (c), (d) and (g) with options through (g)
+
+\newpage
+
+\item Suppose $y_1=e^{t/2}$ and $y_2=e^{3t}$ are solutions to $ay\,^{\prime\prime}+by\,^{\prime}+3y=0$ where $a,b$ are real numbers.  Find $a$.\\
+
+
+\begin{enumerate}[label=(\alph*)]
+   	    \item[$\bigcirc$ (a)] $0.5$\\
+		\item[$\bigcirc$ (b)] $1$\\
+		\item[$\bigcirc$ (c)] $2$\\  % ***
+		\item[$\bigcirc$ (d)] $3$\\
+		\item[$\bigcirc$ (e)] $4$\\
+   	    \item[$\bigcirc$ (f)] $5$\\
+	\end{enumerate} 
+
+% (c) with options through (f)
+
+
+
+\item Classify the differential equation $100y\,^{\prime}=y\left(1-\frac{y}{100}\right)-500$. Select all that apply.
+
+\begin{enumerate}[label=(\alph*)]
+		\item[$\bigcirc$ (a)] First order\\ % ***
+		\item[$\bigcirc$ (b)] Linear\\
+		\item[$\bigcirc$ (c)] Autonomous\\  % ***
+		\item[$\bigcirc$ (d)] Second order\\
+		\item[$\bigcirc$ (e)] Separable\\  % ***
+		\item[$\bigcirc$ (f)] Bernoulli\\
+		\item[$\bigcirc$ (g)] Nonlinear homogeneous\\
+	\end{enumerate} 
+
+% (a), (c), (e) with options through (g)
+
+
+
+\item Consider the IVP $y\,^{\prime}=xy^3$, $y(0)=2$.  Find the width of the widest open interval on which there is a solution to this IVP.
+
+% 1
+
+% 1/y^3 y'=x ... -1/(2y^2)=x^2 /2+C
+
+% 1/y^2=C-x^2
+
+% y=1/sqrt(0.25-x^2) ... Maximal is (-1/2,1/2)
+
+\item Suppose $y(t)$ satisfies $t^2y\,^{\prime\prime}+2ty\,^{\prime}-2y=t$, $y(1)=0$, $y\,^{\prime}(1)=0$.  Find $y(2)$.  Round to the nearest hundredth.
+
+
+% 0.27
+
+% m^2+m-2=(m-1)(m+2) ... y_1=t
+
+% y=ut ... y'=u't+u and y''=u''t+2u' ... t^3u''+2t^2u'+2t^2u'+2tu-2tu=t
+
+% t^4u''+4t^3u'=t^2
+
+% t^4u'=t^3/3+c
+
+% u'=1/(3t)+c/t^4
+
+% u=ln(t)/3+c/t^3+d
+
+% y=tln(t)/3+c/t^2+dt ... y(1)=0:  0=c+d
+
+% y'=1/3+ln(t)/3-2c/t^3+d ... y'(1)=0:  0=1/3-2c+d
+
+% Sub.  0=-1/3+3c ... c=1/9 and d=-1/9
+
+% y=tln(t)/3+1/(9t^2)-t/9
+
+\newpage
+
+\item   Consider the IVP $y\,^{\prime}=y^2+4t$, $y(0)=2$.  Which of the following is resulting estimate of $y(1.5)$ when using Euler's Method with $3$ equal-sized steps? 
+
+    You may or may not find the following useful:  $11^2=121$, $12^2=144$, $13^2=169$,  $14^2=196$, $15^2=225$, $16^2=256$, $17^2=289$, $18^2=324$, and $19^2=361$.
+
+% y_1=2+(2^2+4(0))*(0.5)=4 \approx y(0.5)
+
+% y_2=4+(4^2+4(0.5))*(0.5)=13 \approx y(1)
+
+% y_3=13+(13^2+4(1))*(0.5)=13+173/2=199/2 \approx y(1.5)
+
+
+\begin{enumerate}[label=(\alph*)]
+		\item[$\bigcirc$ (a)] $13$
+		\item[$\bigcirc$ (b)] $91$
+		\item[$\bigcirc$ (c)] $\dfrac{395}{4}$
+		\item[$\bigcirc$ (d)] $99$
+		\item[$\bigcirc$ (e)] $\dfrac{199}{2}$  % ***
+	\item[$\bigcirc$ (f)] None of these
+	\end{enumerate} 
+
+% (e) with options through (f)
+
+
+\item  Determine $y(1/2)$ given $y(t)$ satisfies $y\,^{\prime\prime}(t)=-1/[y(t)]^3$, $y(1)=-1$ and $y\,^{\prime}(1)=1$ on some open interval containing $x=1/2$ and $x=1$.  Round to the nearest hundredth.
+
+% -1.41
+
+% y' y'' = -1/y^3  y' ---> 0.5 (y')^2 = 0.5 /y^2 + C ---> (y')^2 = 1/y^2 + C --> C=0
+
+% (y')^2 = 1/y^2 --> y'= +/- 1/y  ---> yy'=+/- ---> 0.5y^2=+/-t+C ---> y=-sqrt(+/-2t+C) ----> y=-sqrt(3-2t) works.
+
+% SANITY CHECK:  y=-(3-2t)^0.5 --> y'=(3-2t)^(-0.5) ---> y''=(3-2t)^(-1.5)=-1/y^3 :)
+
+
+\item Suppose $y(t)$ is a solution to the following initial value problem: $$ y\,^{\prime\prime} + 20y\,^{\prime}+200y = 362e^{-t}\mbox{ where }y(0) = 0\mbox{ and }y\,^{\prime}(0) = 1.$$  Find $\displaystyle \lim_{t \rightarrow \infty} y(t)$ (the equilibrium solution) to the nearest hundredth.
+
+% 0
+
+
+\item Suppose a mass is suspended on a spring and brought gently to rest, stretching the spring by $9.8$ cm.  Then the spring is pulled down $4.9$ cm and released.  Assuming there is no damping, determine the frequency (to the nearest hundredth in hz) at which oscillations occur.  Use $9.8$ m/s$^{2}$ for the magnitude of the acceleration due to gravity.
+
+
+
+    % sqrt(g/l)/(2pi)=5/pi \approx 1.59
+
+\item Suppose that for $t\geq 0$, $y(t)$ satisfies $\displaystyle y\,^{\prime\prime}-y=\left\{\begin{array}{lr}
+       t & \mbox{ if }0\leq t<1\\
+       \\
+       1 &  \mbox{ if }t\geq 1
+     \end{array}\right.$, \hspace{0.25cm} $y(0)=1$, $y\,^{\prime}(0)=2$.  Determine $y(2)$.  Round to the nearest hundredth.\\
+
+
+% y''-y=t-U(t-1)*(t-1)  ---> (s^2-1)Y -s-2=1/s^2-e^(-s)/s^2 ---> Y= (s+2)/[(s-1)(s+1)]+1/[(s-1)(s+1)s^2] -e^(-s)/[(s-1)(s+1)s^2]
+
+% (s+2)/[(s-1)(s+1)]=1.5/(s-1)-0.5/(s+1) AND 1/[(s-1)(s+1)s^2]=0.5/(s-1)-0.5/(s+1)-1/s^2+A/s ---> 1=0.5(s^3+s^2)-0.5(s^3-s^2)-(s^2-1)+A(s^3-s)
+
+%  ...[cont.]  1=0.5s^3+0.5s^2-0.5s^3+0.5s^2-s^2+1+As^3-As ---> 1=1+As^3-As  ---> A=0.  So  1/[(s-1)(s+1)s^2]=0.5/(s-1)-0.5/(s+1)-1/s^2
+
+% Y=1.5/(s-1)-0.5/(s+1)+0.5/(s-1)-0.5/(s+1)-1/s^2-e^(-s) {0.5/(s-1)-0.5/(s+1)-1/s^2}
+
+
+% y(t)=1.5e^t-0.5e^(-t)+[0.5e^t-0.5e^(-t)-t]-U(t-1)[0.5e^(t-1)-0.5e^(-t+1)-t+1]
+
+% y(2)=1.5e^2-0.5e^(-2)+[0.5e^2-0.5e^(-2)-2]-[0.5e^(2-1)-0.5e^(-2+1)-2+1]\approx 12.47
+
+
+% 1.5e^2-0.5/e^2+[0.5e^2-0.5/e^2-2]-[0.5e-0.5/e-1]=2e^2-1/e^2-0.5e+0.5/e-1 \approx 12.47
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Sanity check:  y'(t)=1.5e^t+0.5e^(-t)+[0.5e^t+0.5e^(-t)-1]-U(t-1)[0.5e^(t-1)+0.5e^(-t+1)-1] and
+
+% y''(t)-y(t)=1.5e^t-0.5e^(-t)+[0.5e^t-0.5e^(-t)]-U(t-1)[0.5e^(t-1)-0.5e^(-t+1)]-{1.5e^t-0.5e^(-t)+[0.5e^t-0.5e^(-t)-t]-U(t-1)[0.5e^(t-1)-0.5e^(-t+1)-t+1]}
+
+%=t+U(t-1)[-t+1] checks out!!
+
+\item    Suppose $y(t)$ satisfies the integral equation $\displaystyle y(t)=t+\int_0^t y(x)e^{x-t}\; dx$. Find $y(1)$ to the nearest tenth.
+
+
+ % Laplace:  Y=1/s^2+Y/(s+1) --> [s/(s+1)]Y=1/s^2 ---> Y=(s+1)/s^3=1/s^2+1/s^3 ---> y=t+0.5t^2 ---> 1.5
+
+ % SANITY CHECK:  -(t+0.5t^2)+t+\int_0^t (x+0.5x^2)e^{x-t}\; dx =-0.5t^2+e^{-t}\int_0^t (x+0.5x^2) e^{x}\; dx
+
+ % x+0.5x^2 | e^x
+ % 1+x      | e^x
+ % 1        | e^x
+ % 0        | e^x      -0.5t^2 +e^{-t}{e^x(x+0.5x^2-1-x+1) eval. from x=0 to x=t}.  So get -0.5t^2 +e^{-t}{e^t(0.5t^2)} Booyah
+
+
+ \item Suppose that the current (in amps) in an RLC-circuit with an alternating current voltage source and a resistor of resistance $R=100\;\Omega$ is $I(t)=0.1 \sin{(120\pi t)}+e^{-100t}\cos{(200t)}$ at time $t\geq 0$ seconds.  Find the inductance $L$ of the inductor in henries. 
+ 
+     % 0.5
+
+    % -100=-R/2L so L=1/2.  Steady state is 0.1 \sin{(120\pi t)}.
+
+% LI''+100I'+(1/C)I=0 ---> 100/2L +/- sqrt([R/(2L)]^2-1/(LC)).  200^2=  1/(LC)-100^2.  C=1/[6(40000+10000)]=1/300,000
+
+
+
+\newpage
+
+\item Suppose $y(x)$ satisfies $(xye^{x}+ye^{x}+3x^2)\,dx+(xe^{x}+1)\,dy=0$ and $y(0)=1$.  Determine $y(1/2)$.  Round to the nearest hundredth.
+
+% (7/8)/(sqrt(e)/2+1)\approx 0.48
+
+% y=(1-x^3)/(xe^x+1)
+
+
+
+\item An important local news story breaks in a community of $100,000$ people at 8am.  Suppose that the number of people in the community that have heard the news grows at a rate proportional to the product of the fraction who have heard the news and the fraction who have not heard the news.  Suppose that when the news broke, $1,000$ people in the community heard it, and that one hour later, at 9am, 20,000 people in the community have heard the news.  Determine the number of community members who have heard the news by 10am.  Answer in thousands of people, rounded to the nearest whole number.
+
+    Hint:  Let $y(t)$ be the fraction of the community population that has heard the news by $t\geq 0$ hours after 8:00 AM.
+
+
+    % 86
+
+    % y'=ky(1-y).  y(0)=0.01, y(1)=0.2
+
+    % 1/{y(1-y)] y'=k
+
+    % [1/y+1/(1-y)] y'=k
+
+    % ln[1/y-1]=-kt+c
+
+    % 1/y=1+C(e^{-k})^t
+
+    % 1/y=1+C(e^{-k})^t
+
+    % y=1/[1+C(e^{-k})^t]
+
+    % y=1/[1+99(e^{-k})^t]
+
+        % 1/5=1/[1+99(e^{-k})]
+
+        % 4/99=(e^{-k})
+
+
+            % y=1/[1+99(4/99)^t]  ... y(2)=1/[1+99(4/99)^2]\approx 0.86087
+
+
+\item Let {\large$f(t)=\left\{\begin{array}{lr}
+       \pi-t & \mbox{ if }0\leq t<\pi\\
+       \\
+       0 &  \mbox{ if }t\geq \pi
+     \end{array}\right..$} \\ \\ Solve the IVP {\large$y\,^{\prime\prime}+y=f(t)+5\delta(t-2\pi)$, \hspace{0.25cm} $y(0)=0$, $y\,^{\prime}(0)=0$}.  Determine $y(3\pi)$.  Round to the nearest hundredth.
+
+
+     % 3.14
+
+
+\end{enumerate}
+
+\end{document}
